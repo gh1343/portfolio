@@ -1,415 +1,481 @@
 $(document).ready(function () {
-  $('.gnb').mouseenter(function () {
-    $(this).find('.sub').stop().slideDown();
-    $('.sub_bg').show();
-  }).mouseleave(function () {
-    $('.gnb>li').find('.sub').stop().slideUp(300);
-    $('.sub_bg').hide();
-  })
-  $('.mb_icon').click(function () {
-    $('.gnb,.sub,.sns,.sub_bg').toggleClass('on');
-    $(this).toggleClass('close');
-  })
-  $(window).scroll(function () {
-    let scroll = $(this).scrollTop();
-    if (scroll > 1000) {
-      $('header').css('background', 'rgba(0, 0, 0, 0.7)')
-    } else {
-      $('header').css('background', 'none')
+    $('.gnb > li').mouseenter(function () {
+        $(this).parent().addClass('active');
+        $('.sub_bg').css({
+            'opacity':'0.9',
+            'visibility':'visible'
+        });
+    });
+    $('header').mouseleave(function () {
+        $(this).find('.gnb').removeClass('active');
+        $('.gnb, .sub, .sns, .sub_bg').removeClass('on');
+        $('.sub_bg').css({
+            'opacity':'0',
+            'visibility':'hidden'
+        });
+    });
+    $('.mb_icon').click(function () {
+        $('.mobile_popup').addClass('on');
+    });
+    $('.close').click(function(){
+        $('.mobile_popup').removeClass('on');
+    });
+    $(window).scroll(function () {
+        let scroll = $(this).scrollTop();
+        if (scroll > 1000) {
+            $('header').css('background', 'rgba(0, 0, 0, 0.7)');
+        } else {
+            $('header').css('background', 'none');
+        }
+    });
+    // btn
+    $('.btn_2').click(function () {
+        $('tbc').removeClass('active');
+        $('.tab_conts1').addClass('active');
+    });
+    $('.sns_conts:nth-child(2)').click(function () {
+        $('.modal_wrap').css('display', 'block');
+    });
+    $('.btn_close').click(function () {
+        $('.modal_wrap').css('display', 'none');
+    });
+    // gotop
+    $('.gotop').click(function () {
+        $('html,body').animate({ 'scrollTop': 0 });
+    });
+    //movie tab
+    const mTxtLi = $('.m_txt > li');
+    mTxtLi.click(function (e) {
+        e.preventDefault();
+        let clickTab = $(this).find('a').attr('href');
+        $('.m_list, .arrow_wrap').css('display', 'none');
+        $(clickTab).css('display', 'flex');
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+    });
+    const movieSlidetab1 = new Swiper(".slides_wrap1", {
+        navigation: {
+            nextEl: ".mbr1",
+            prevEl: ".mbl1",
+        },
+        slidesPerView : 5,
+        spaceBetween : 32,
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.mbl1').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndex1 = this.realIndex;
+                if (window.innerWidth > 1024) {
+                    // 첫 번째 슬라이드에 도달했을 때
+                    if (this.isBeginning) {
+                        // 왼쪽 버튼 숨기기
+                        $('.mbl1').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.mbl1').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.mbr1').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.mbr1').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.mbl1, .mbr1').hide();
+                    } else {
+                        $('.mbl1, .mbr1').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.mbr1, .mbl1').hide();
+                    } else {
+                        $('.mbr1, .mbl1').hide();
+                    }
+                }
+            },
+        },
+        breakpoints: {
+            1024: {
+                freeMode: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10
+            }
+        }
+    });
+    const movieSlidetab2 = new Swiper(".slides_wrap2", {
+        navigation: {
+            nextEl: ".mbr2",
+            prevEl: ".mbl2",
+        },
+        slidesPerView : 5,
+        spaceBetween : 32,
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.mbl2').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndex2 = this.realIndex;
+                if (window.innerWidth > 1024) {
+                    // 첫 번째 슬라이드에 도달했을 때
+                    if (this.isBeginning) {
+                        // 왼쪽 버튼 숨기기
+                        $('.mbl2').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.mbl2').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.mbr2').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.mbr2').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.mbl2, .mbr2').hide();
+                    } else {
+                        $('.mbl2, .mbr2').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.mbr2, .mbl2').hide();
+                    } else {
+                        $('.mbr2, .mbl2').hide();
+                    }
+                }
+            },
+        },
+        breakpoints: {
+            1024: {
+                freeMode: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10
+            }
+        }
+    });
+    const movieSlidetab3 = new Swiper(".slides_wrap3", {
+        navigation: {
+            nextEl: ".mbr3",
+            prevEl: ".mbl3",
+        },
+        slidesPerView : 5,
+        spaceBetween : 32,
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.mbl3').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndex3 = this.realIndex;
+                if (window.innerWidth > 1024) {
+                    // 첫 번째 슬라이드에 도달했을 때
+                    if (this.isBeginning) {
+                        // 왼쪽 버튼 숨기기
+                        $('.mbl3').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.mbl3').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.mbr3').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.mbr3').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.mbl3, .mbr3').hide();
+                    } else {
+                        $('.mbl3, .mbr3').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.mbr3, .mbl3').hide();
+                    } else {
+                        $('.mbr3, .mbl3').hide();
+                    }
+                }
+            },
+        },
+        breakpoints: {
+            1024: {
+                freeMode: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10
+            }
+        }
+    });
+    const movieSlidetab4 = new Swiper(".slides_wrap4", {
+        navigation: {
+            nextEl: ".mbr4",
+            prevEl: ".mbl4",
+        },
+        slidesPerView : 5,
+        spaceBetween : 32,
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.mbl4').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndex4 = this.realIndex;
+                if (window.innerWidth > 1024) {
+                    // 첫 번째 슬라이드에 도달했을 때
+                    if (this.isBeginning) {
+                        // 왼쪽 버튼 숨기기
+                        $('.mbl4').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.mbl4').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.mbr4').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.mbr4').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.mbl4, .mbr4').hide();
+                    } else {
+                        $('.mbl4, .mbr4').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.mbr4, .mbl4').hide();
+                    } else {
+                        $('.mbr4, .mbl4').hide();
+                    }
+                }
+            },
+        },
+        breakpoints: {
+            1024: {
+                freeMode: true,
+                slidesPerView: 'auto',
+                spaceBetween: 10
+            }
+        }
+    });
+    //play
+    const icons = [$('.ic1'), $('.ic2'), $('.ic3')];
+    const views = [$('.vw1'), $('.vw2'), $('.vw3')];
+    const videos = $('.vod');
+    icons.forEach((icon, index) => {
+        const view = views[index];
+        const video = videos.get(index);
+        icon.click(() => {
+            view.css('display', 'block');
+        });
+        icon.on('click', () => {
+            video.currentTime = 0;
+            video.play();
+        });
+    });
+    $('.vc1, .vc2, .vc3').click(function() {
+        const index = $(this).index('.vc1, .vc2, .vc3');
+        const view = views[index];
+        const video = videos.get(index);
+        view.css('display', 'none');
+        video.currentTime = 0;
+        video.pause();
+    });
+    // play tab
+    const Ptab = $('.p_tab > li > a');
+    Ptab.click(function() {
+        const index = $(this).parent().index();
+        $('.p_img_wrap > div').hide().eq(index).show();
+    });
+    // tab
+    const txtH = $('.tab_txt > h4'), //누르는거
+        tcA = $('.tab_conts > a'); // 보여지는거
+    txtH.eq(0).click(function () {
+        txtH.removeClass('up');
+        $(this).addClass('up');
+        tcA.show();
+    });
+    txtH.eq(1).click(function () {
+        txtH.removeClass('up');
+        $(this).addClass('up');
+        tcA.hide();
+        $('.pre').show();
+    });
+    txtH.eq(2).click(function () {
+        txtH.removeClass('up');
+        $(this).addClass('up');
+        tcA.hide();
+        $('.eve').show();
+    });
+    // magazine 슬라이드1
+    const personswiper1 = new Swiper(".maga1_sliderWrap", {
+        navigation: {
+            nextEl: ".si_right",
+            prevEl: ".si_left",
+        },
+        slidesPerView : 3,
+        spaceBetween : 20,
+        breakpoints: {
+            480: {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+            }
+        },
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.si_left').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndexmini1 = this.realIndex;
+                if (window.innerWidth > 480) {
+                    if (this.isBeginning) {
+                    // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
+                        $('.si_left').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.si_left').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.si_right').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.si_right').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.si_left, .si_right').hide();
+                    } else {
+                        $('.si_left, .si_right').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.si_right, .si_left').hide();
+                    } else {
+                        $('.si_right, .si_left').hide();
+                    }
+                }
+            },
+        },
+    });
+    const personswiper2 = new Swiper(".maga2_sliderWrap", {
+        navigation: {
+            nextEl: ".si_right2",
+            prevEl: ".si_left2",
+        },
+        slidesPerView : 3,
+        spaceBetween : 20,
+        breakpoints: {
+            480: {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+            }
+        },
+        on: {
+            init: function () {
+                // 초기화될 때 왼쪽 버튼 숨기기
+                $('.si_left2').hide();
+            },
+            slideChange: function () {
+                // 현재 슬라이드 인덱스 가져오기
+                let currentIndexmini2 = this.realIndex;
+                if (window.innerWidth > 480) {
+                    if (this.isBeginning) {
+                    // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
+                        $('.si_left2').hide();
+                    } else {
+                        // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
+                        $('.si_left2').show();
+                    }
+                    // 마지막 슬라이드에 도달했을 때
+                    if (this.isEnd) {
+                        // 오른쪽 버튼 숨기기
+                        $('.si_right2').hide();
+                    } else {
+                        // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
+                        $('.si_right2').show();
+                    }
+                } else {
+                    if (this.isBeginning) {
+                        $('.si_left2, .si_right2').hide();
+                    } else {
+                        $('.si_left2, .si_right2').hide();
+                    }
+                    if (this.isEnd) {
+                        $('.si_right2, .si_left2').hide();
+                    } else {
+                        $('.si_right2, .si_left2').hide();
+                    }
+                }
+            },
+        }
+    });
+    // 모바일 네비 슬라이드
+    const mobile_banner = new Swiper(".m_swiper", {
+        pagination: {
+            el: ".banner_navi",
+            type: "fraction",
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+    });
+    const event = new Swiper(".rolling_wrap", {
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        slidesPerView: 'auto',
+        freeMode: true,
+        spaceBetween: 20,
+        breakpoints: {
+            768: {
+                autoplay: false,
+                loop: false
+            }
+        }
+    });
+    // 이벤트 스탑
+    $('.rolling_list').on('mouseenter', function(){
+        event.autoplay.stop();
+    });
+    $('.rolling_list').on('mouseleave', function(){
+        event.autoplay.start();
+    });
+});
+// 푸터 계열사 사이트 이동
+function goFamilySite() {
+    let famulySiteURL = $('#familysite').val();
+    if (famulySiteURL != "") {
+        let win = window.open(famulySiteURL, 'winFamilySite')
+        win.focus();
     }
-  });
-  // movie
-  $('.m_list a').mouseenter(function () {
-    $(this).find('div').stop().fadeIn();
-  }).mouseleave(function () {
-    $(this).find('div').stop().fadeOut(300);
-  })
-  // btn
-  $('.btn_2').click(function () {
-    $('tbc').removeClass('active');
-    $('.tab_conts1').addClass('active');
-  })
-  $('.sns_conts:nth-child(2)').click(function () {
-    $('.modal_wrap').css('display', 'block')
-  })
-
-  $('.btn_close').click(function () {
-    $('.modal_wrap').css('display', 'none')
-  })
-  // gotop
-  $('.gotop').click(function () {
-    $('html,body').animate({ 'scrollTop': 0 })
-  })
-  //movie tab
-  const $mTxtLi = $('.m_txt>li'),
-    $mTxt1 = $('.m_txt>li:first-child'),
-    $mTxt2 = $('.m_txt>li:nth-child(2)'),
-    $mTxt3 = $('.m_txt>li:nth-child(3)'),
-    $mTxt4 = $('.m_txt>li:nth-child(4)'),
-    $mList1 = $('.m_list_wrap>.m_list:first-child'),
-    $mList2 = $('.m_list_wrap>.m_list:nth-child(2)'),
-    $mList3 = $('.m_list_wrap>.m_list:nth-child(3)'),
-    $mList4 = $('.m_list_wrap>.m_list:nth-child(4)');
-
-  $mTxtLi.click(function (e) {
-    e.preventDefault();
-    let clickTab = $(this).find('a').attr('href');
-    $('.m_list').css('display', 'none')
-    $(clickTab).css('display', 'flex')
-  })
-
-  // play
-  const $ic1 = $('.ic1'),
-    $ic2 = $('.ic2'),
-    $ic3 = $('.ic3'),
-    $vw1 = $('.vw1'),
-    $vw2 = $('.vw2'),
-    $vw3 = $('.vw3'),
-    $vd1 = $('.vd1'),
-    $vd2 = $('.vd2'),
-    $vd3 = $('.vd3'),
-    $vc1 = $('.vc1'),
-    $vc2 = $('.vc2'),
-    $vc3 = $('.vc3');
-
-  $ic1.click(function () {
-    $vw1.css('display', 'block')
-  })
-  $vc1.click(function () {
-    $vw1.css('display', 'none')
-  })
-  $ic1.on('click', function () {
-    let vid1 = $('.vod').get(0);
-    vid1.currentTime = 0;
-    vid1.play();
-  });
-  $vc1.on('click', function () {
-    let vid1 = $('.vod').get(0);
-    vid1.currentTime = 0;
-    vid1.pause();
-  });
-  $ic2.click(function () {
-    $vw2.css('display', 'block')
-  })
-  $vc2.click(function () {
-    $vw2.css('display', 'none')
-  })
-  $ic2.on('click', function () {
-    let vid2 = $('.vod').get(1);
-    vid2.currentTime = 0;
-    vid2.play();
-  });
-  $vc2.on('click', function () {
-    let vid2 = $('.vod').get(1);
-    vid2.currentTime = 0;
-    vid2.pause();
-  });
-  $ic3.click(function () {
-    $vw3.css('display', 'block')
-  })
-  $vc3.click(function () {
-    $vw3.css('display', 'none')
-  })
-  $ic3.on('click', function () {
-    let vid3 = $('.vod').get(2);
-    vid3.currentTime = 0;
-    vid3.play();
-  });
-  $vc3.on('click', function () {
-    let vid3 = $('.vod').get(2);
-    vid3.currentTime = 0;
-    vid3.pause();
-  });
-
-  // play tab
-  const contp = $('.p_img_wrap>div');
-  let $Ptab = $('.p_tab>li');
-
-  $Ptab.eq(0).click(function () {
-    $Ptab.removeClass('on')
-    $(this).addClass('on')
-    contp.hide()
-    $('.first').show()
-  });
-  $Ptab.eq(1).click(function () {
-    $Ptab.removeClass('on')
-    $(this).addClass('on')
-    contp.hide()
-    $('.second').show()
-  });
-  $Ptab.eq(2).click(function () {
-    $Ptab.removeClass('on')
-    $(this).addClass('on')
-    contp.hide()
-    $('.third').show()
-  });
-  // tab
-  const
-    // 누르는거
-    $txtH = $('.tab_txt>h4'),
-    // 보여지는거
-    $tcA = $('.tab_conts>a');
-
-  $txtH.eq(0).click(function () {
-    $txtH.removeClass('up')
-    $(this).addClass('up')
-    $tcA.show()
-  })
-  $txtH.eq(1).click(function () {
-    $txtH.removeClass('up')
-    $(this).addClass('up')
-    $tcA.hide()
-    $('.pre').show()
-  })
-  $txtH.eq(2).click(function () {
-    $txtH.removeClass('up')
-    $(this).addClass('up')
-    $tcA.hide()
-    $('.eve').show()
-  })
-
-
-
-
-  // // movie 슬라이드
-  const $m_list = $('.m_list'),
-    $m_button_left = $('.m_button_left'),
-    $m_button_right = $('.m_button_right');
-
-  const $maga1_slides = $('.maga1_slides'),
-    $si_left1 = $('.si_left'),
-    $si_right1 = $('.si_right');
-
-  const $maga2_slides = $('.maga2_slides'),
-    $si_left2 = $('.si_left2'),
-    $si_right2 = $('.si_right2');
-
-  $(window).resize(function () {
-    let win = $(this);
-    winWid = win.width(),
-      currentPt = 0;
-    // 슬라이더1
-    $si_left1.click(function () {
-      gotosliderpt1(currentPt - 1);
-
-      if (currentPt === 0) {
-        $si_left1.addClass('take')
-      } else {
-        $si_right1.removeClass('take');
-        $si_left1.removeClass('take');
-        gotosliderpt1(currentPt);
-      }
-
-    })
-    $si_right1.click(function () {
-      gotosliderpt1(currentPt + 1);
-      if (winWid < 1920) {
-        if (currentPt < 3) {
-          $si_right1.removeClass('take');
-          $si_left1.removeClass('take');
-          gotosliderpt1(currentPt);
-        } else {
-          $si_right1.addClass('take');
-        }
-      }
-      if (winWid < 960) {
-        if (currentPt < 4) {
-          $si_right1.removeClass('take');
-          $si_left1.removeClass('take');
-          gotosliderpt1(currentPt);
-        } else {
-          $si_right1.addClass('take');
-        }
-      }
-      if (winWid < 768) {
-        if (currentPt < 4) {
-          $si_right1.removeClass('take');
-          $si_left1.removeClass('take');
-          gotosliderpt1(currentPt);
-        } else {
-          $si_right1.addClass('take');
-        }
-      }
-      if (winWid < 486) {
-        if (currentPt < 5) {
-          $si_right1.removeClass('take');
-          $si_left1.removeClass('take');
-          gotosliderpt1(currentPt);
-        } else {
-          $si_right1.addClass('take');
-        }
-      }
-
-    })
-    function gotosliderpt1(W) {
-      if (winWid < 960) {
-        $maga1_slides.css('left', (-50 * W) + '%');
-        currentPt = W;
-      } else {
-        $maga1_slides.css('left', (-33.3333 * W) + '%');
-        currentPt = W;
-      }
-      if (winWid < 768) {
-        $maga1_slides.css('left', (-50 * W) + '%');
-        currentPt = W;
-      }
-      if (winWid < 486) {
-        $maga1_slides.css('left', (-100 * W) + '%');
-        currentPt = W;
-      }
+}
+// 모바일 푸터 캐러셀
+function fnFooter() { 
+    var target = $('.btn_footerInfo').parent('dt');
+    if(!target.hasClass('active')){
+        target.siblings().slideDown(function(){
+            target.addClass('active');
+        });
+    }else{
+        target.siblings().slideUp(function(){
+            target.removeClass('active');
+        });
     }
-    // 슬라이더 2
-    $si_left2.click(function () {
-      gotosliderpt2(currentPt - 1);
-
-      if (currentPt === 0) {
-        $si_left2.addClass('in')
-      } else {
-        $si_right2.removeClass('in');
-        $si_left2.removeClass('in');
-        gotosliderpt2(currentPt);
-      }
-
-    })
-    $si_right2.click(function () {
-      gotosliderpt2(currentPt + 1);
-      if (winWid < 1920) {
-        if (currentPt < 3) {
-          $si_right2.removeClass('in');
-          $si_left2.removeClass('in');
-          gotosliderpt2(currentPt);
-        } else {
-          $si_right2.addClass('in');
-        }
-      }
-      if (winWid < 960) {
-        if (currentPt < 4) {
-          $si_right2.removeClass('in');
-          $si_left2.removeClass('in');
-          gotosliderpt2(currentPt);
-        } else {
-          $si_right2.addClass('in');
-        }
-      }
-      if (winWid < 768) {
-        if (currentPt < 4) {
-          $si_right2.removeClass('in');
-          $si_left2.removeClass('in');
-          gotosliderpt2(currentPt);
-        } else {
-          $si_right2.addClass('in');
-        }
-      }
-      if (winWid < 486) {
-        if (currentPt < 5) {
-          $si_right2.removeClass('in');
-          $si_left2.removeClass('in');
-          gotosliderpt2(currentPt);
-        } else {
-          $si_right2.addClass('in');
-        }
-      }
-
-    })
-    function gotosliderpt2(R) {
-      if (winWid < 960) {
-        $maga2_slides.css('left', (-50 * R) + '%');
-        currentPt = R;
-      } else {
-        $maga2_slides.css('left', (-33.3333 * R) + '%');
-        currentPt = R;
-      }
-      if (winWid < 768) {
-        $maga2_slides.css('left', (-50 * R) + '%');
-        currentPt = R;
-      }
-      if (winWid < 486) {
-        $maga2_slides.css('left', (-100 * R) + '%');
-        currentPt = R;
-      }
-    }
-
-    $m_button_left.click(function () {
-      gotosliderpt(currentPt - 1);
-      if (currentPt === 0) {
-        $m_button_left.addClass('switch')
-      } else {
-        $m_button_right.removeClass('switch');
-        $m_button_left.removeClass('switch');
-        gotosliderpt(currentPt)
-      }
-
-    })
-    $m_button_right.click(function () {
-      gotosliderpt(currentPt + 1);
-      if (winWid < 1920) {
-        if (currentPt < 3) {
-          $m_button_right.removeClass('switch');
-          $m_button_left.removeClass('switch');
-          gotosliderpt(currentPt);
-        } else {
-          $m_button_right.addClass('switch');
-        }
-      }
-      if (winWid < 960) {
-        if (currentPt < 4) {
-          $m_button_right.removeClass('switch');
-          $m_button_left.removeClass('switch');
-          gotosliderpt(currentPt);
-        } else {
-          $m_button_right.addClass('switch');
-        }
-      }
-      if (winWid < 768) {
-        if (currentPt < 5) {
-          $m_button_right.removeClass('switch');
-          $m_button_left.removeClass('switch');
-          gotosliderpt(currentPt);
-        } else {
-          $m_button_right.addClass('switch');
-        }
-      }
-      if (winWid < 486) {
-        if (currentPt < 7) {
-          $m_button_right.removeClass('switch');
-          $m_button_left.removeClass('switch');
-          gotosliderpt(currentPt);
-        } else {
-          $m_button_right.addClass('switch');
-        }
-      }
-
-    })
-    function gotosliderpt(i) {
-      if (winWid < 960) {
-        $m_list.css('left', (-25 * i) + '%');
-        currentPt = i;
-      } else {
-        $m_list.css('left', (-20 * i) + '%');
-        currentPt = i;
-      }
-      if (winWid < 768) {
-        $m_list.css('left', (-33.3333 * i) + '%');
-        currentPt = i;
-      }
-      if (winWid < 486) {
-        $m_list.css('left', (-100 * i) + '%');
-        currentPt = i;
-      }
-    }
-
-  }).resize();
-
-
-
-
-
-
-
-
-
-
-
-
-
-})
+}

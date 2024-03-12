@@ -12,7 +12,7 @@ $(function () {
 			responsiveWidth: 768,
 			navigation: true,
 			navigationPosition: 'right',
-			sectionSelector: '.section'
+			sectionSelector: '.selector'
 		});
 	});
 

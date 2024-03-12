@@ -1,0 +1,431 @@
+@charset "UTF-8";
+@import "mixin";
+:root {
+    --white: #fcfaf3;
+    --themecolor: #282552;
+    --orange: rgb(237, 142, 59);
+}
+body {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+section {
+    position: relative;
+    background-color: var(--white);
+}
+/* common */
+#fullpage {
+    width: 100%;
+    color: var(--themecolor);
+}
+.inner {
+    padding-top: 50px;
+    height: 100%;
+}
+.headline {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+        content: '';
+        background-color: var(--themecolor);
+        width: 100%;
+        height: 1px;
+    }
+    span {
+        font-size: 30px;
+        margin-right: 90px;
+    }
+}
+.covercon {
+    @include centerpos(50%, 50%);
+    width: 90%;
+}
+.content {
+    @include centerpos(50%, 50%);
+    width: 90%;
+    min-height: 900px;
+}
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+        content: '';
+        background-color: var(--themecolor);
+        width: 85%;
+        height: 1px;
+        margin-left: 40px;
+    }
+    span {
+        font-size: 30px;
+    }
+}
+/* cover */
+.portfolio {
+    margin: 270px 0;
+    span {
+        display: block;
+        font-size: 100px;
+        text-align: center;
+        &:first-child {
+            font-weight: 100;
+        }
+        &:nth-child(2) {
+            font-weight: 400;
+        }
+        &:nth-child(3) {
+            font-weight: 550;
+        }
+    }
+}
+.lastline {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 75px;
+    &::before, &::after {
+        content: '';
+        width: 33.333%;
+        height: 1px;
+        background-color: var(--themecolor);
+    }
+    span {
+        font-size: 19px;
+        width: 33.333%;
+    }
+}
+/* resume */
+.conts {
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    width: 100%;
+}
+.part1 {
+    width: 21%
+}
+.part2 {
+    width: 26%;
+}
+.part3 {
+    width: 20%;
+}
+.infor {
+    width: 150px;
+    margin-bottom: 20px;
+}
+.naming {
+    margin-bottom: 20px;
+}
+.skill_img {
+    margin: 10px 0 10px;
+    > img {
+        width: 50px;
+        margin-right: 10px;
+    }
+}
+.graduation, .education {
+    margin-bottom: 40px;
+}
+.infor, .naming, .ct_point, .graduation, .education, .work, .skills {
+    line-height: 26px;
+}
+/* aboutMe */
+.aboutMe_conts {
+    @include centerpos(50%, 50%);
+    h3 {
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 0.6px;
+        margin-bottom: 35px;
+    }
+    h4 {
+        margin-bottom: 15px;
+        font-size: 19px;
+        letter-spacing: 0.5px;
+    }
+    p {
+        font-size: 17px;
+        letter-spacing: 0.5px;
+        line-height: 25px;
+    }
+}
+.first_box {
+    margin-bottom: 40px;
+}
+/* contents */
+.contents_conts {
+    @include centerpos(50%, 50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+.cont1 span {
+    display: block;
+    font-size: 50px;
+    font-weight: 100;
+    &:nth-child(2) {
+        font-weight: 400;
+    }
+    &:nth-child(3) {
+        font-weight: 550;
+    }
+}
+.cont2 {
+    font-size: 30px;
+    span {
+        color: var(--orange);
+    }
+}
+.cont_yes24, .cont_volkswagen {
+    margin-bottom: 50px;
+}
+/* yes24 */
+.yes24_box {
+    @include centerpos(50%, 50%);
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+.yes24_lt {
+    flex: 0.2;
+    .point {
+        margin-bottom: 5px;
+    }
+    span {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 40px;
+        b:not(.non_block) {
+            display: block;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.yes24_mockUp {
+    flex: 0.3;
+}
+.yes24_rt {
+    flex: 0.3;
+    p {
+        margin-bottom: 40px;
+        line-height: 25px;
+        letter-spacing: 0.5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+/* yes24_summary */
+.yes24_summary .summary_box {
+    @include centerpos(50%, 50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    b {
+        display: block;
+        font-size: 21px;
+        margin: 0 0 10px 0;
+    }
+    p {
+        line-height: 1.4;
+    }
+    span {
+        display: block;
+        margin-bottom: 40px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+.sb_cont1, .sb_cont2, .sb_cont3 {
+    flex: 0.25;
+}
+/* detail1_yes24 */
+.db_y24 {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.db_y24_img {
+    flex: 0.1;
+}
+.comment {
+    flex: 0.23;
+    p {
+        margin-bottom: 30px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+/* detail2_y24 */
+.db2_y24 {
+    @include centerpos(50%, 50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+.db2_box1 {
+    flex: 0.02;
+}
+.db2_box2 {
+    flex: 0.3;
+    p {
+        margin-bottom: 50px;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+/* volkswagen */
+.volkswagen_ep {
+    @include centerpos(50%, 50%);
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+.volkswagen_lt {
+    flex: 0.2;
+    span {
+        display: block;
+        margin-bottom: 30px;
+        font-size: 18px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+    b:not(.non_block) {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+.volkswagen_rt {
+    flex: 0.3;
+    p {
+        margin-bottom: 40px;
+        line-height: 25px;
+        letter-spacing: 0.5px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+.volkswagen_mockUp {
+    flex: 0.3;
+}
+/* volkswagen summary */
+.volkswagen_summary .summary_box {
+    @include centerpos(50%, 50%);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    b {
+        display: block;
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+    span {
+        display: block;
+        line-height: 23px;
+        margin-bottom: 40px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+.vw_summary_box1,
+.vw_summary_box2,
+.vw_summary_box3 {
+    flex: 0.25;
+}
+/* vw_detail */
+.vw_detail_box {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.vw_detail_lt {
+    flex: 0.15;
+}
+.vw_detail_rt {
+    flex: 0.23;
+    p {
+        line-height: 1.2;
+        letter-spacing: 0.2px;
+        margin-bottom: 42px;
+        &.mb0 {
+            margin-bottom: 0;
+        }
+    }
+}
+/* sdedu */
+.flex-box {
+    @include centerpos(50%, 50%);
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    > div:first-child.wid_control {
+        flex: 0.15;
+    }
+    > div:first-child {
+        flex: 0.2;
+        span {
+            display: block;
+            margin-bottom: 30px;
+            font-size: 18px;
+            &.mb0 {
+                margin-bottom: 0;
+            }
+        }
+        b:not(.non_block) {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    }
+    > div:last-child {
+        flex: 0.3;
+        p {
+            margin-bottom: 40px;
+            line-height: 25px;
+            letter-spacing: 0.5px;
+            &.mb0 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.capture {
+    width: 110px;
+}
+/* sdedu detail*/
