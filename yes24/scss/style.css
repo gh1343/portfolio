@@ -98,7 +98,7 @@ header {
 }
 @media (max-width: 480px) {
   .logo a {
-    width: 83px;
+    width: 79px;
     height: 16px;
   }
 }
@@ -1671,7 +1671,7 @@ footer.mb_ft::before {
 .mobile_popup.on {
   left: 0;
   opacity: 1;
-  overflow: visible;
+  overflow: auto;
 }
 
 .popup_navi {
@@ -1740,7 +1740,6 @@ footer.mb_ft::before {
 .container_content {
   position: relative;
   top: -1px;
-  height: calc(100% - 50px);
   padding: 24px 20px 0;
   background-color: #1f232b;
 }

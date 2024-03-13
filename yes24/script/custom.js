@@ -16,13 +16,16 @@ $(document).ready(function () {
     });
     $('.mb_icon').click(function () {
         $('.mobile_popup').addClass('on');
+        document.body.style.overflow = 'hidden';
     });
     $('.close').click(function(){
         $('.mobile_popup').removeClass('on');
+        document.body.style.overflow = 'auto';
     });
     $(window).scroll(function () {
         let scroll = $(this).scrollTop();
-        if (scroll > 1000) {
+        let mainHeight = $('.main').height();
+        if (scroll > mainHeight) {
             $('header').css('background', 'rgba(0, 0, 0, 0.7)');
         } else {
             $('header').css('background', 'none');
