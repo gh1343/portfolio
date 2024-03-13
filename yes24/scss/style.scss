@@ -185,8 +185,8 @@ header {
     text-indent: -999px;
     overflow: hidden;
     @media (max-width: 480px) {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
     &:nth-child(2) {
         background-image: url('../images/sns_img2.png');
@@ -804,6 +804,9 @@ header {
         @media (max-width: 860px) {
             width: 300px;
         }
+        @media (max-width: 480px) {
+            width: 210px;
+        }
     }
 }
 .maga2_right {
@@ -816,6 +819,9 @@ header {
         width: 100%;
         @media (max-width: 860px) {
             width: 300px;
+        }
+        @media (max-width: 480px) {
+            width: 210px;
         }
     }
 }
@@ -838,7 +844,7 @@ header {
     width: 70%;
     .swiper-slide {
         @media (max-width: 480px) {
-            width: 100px !important;
+            width: 80px !important;
         }
     }
 }
@@ -939,8 +945,8 @@ header {
         font-size: 13px;
     }
     @media (max-width: 480px) {
-        // font-size: 11px;
-        // letter-spacing: -1.5px;
+        font-size: 12px;
+        letter-spacing: -1.5px;
     }
 }
 /* event */
