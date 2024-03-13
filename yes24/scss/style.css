@@ -74,6 +74,11 @@ header {
     box-sizing: border-box;
   }
 }
+@media (max-width: 480px) {
+  header {
+    height: 45px;
+  }
+}
 
 /* logo */
 .logo a {
@@ -93,7 +98,7 @@ header {
 }
 @media (max-width: 480px) {
   .logo a {
-    width: 97px;
+    width: 83px;
     height: 16px;
   }
 }
@@ -242,10 +247,10 @@ header {
 }
 .mb_icon span {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background-color: #eee;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 @media (max-width: 1024px) {
   .mb_icon {
@@ -267,7 +272,7 @@ header {
 }
 @media (max-width: 480px) {
   .main {
-    height: 33vh;
+    height: 35vh;
   }
 }
 
@@ -322,7 +327,7 @@ header {
 }
 @media (max-width: 480px) {
   .main_txt h6 {
-    font-size: 19px;
+    font-size: 14px;
   }
 }
 .main_txt p {
@@ -335,7 +340,7 @@ header {
 }
 @media (max-width: 480px) {
   .main_txt p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 .main_txt p span {
@@ -626,7 +631,7 @@ header {
 }
 @media (max-width: 480px) {
   .p_img_wrap {
-    height: 21vh;
+    height: 23vh;
   }
 }
 
