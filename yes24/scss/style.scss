@@ -185,7 +185,8 @@ header {
     text-indent: -999px;
     overflow: hidden;
     @media (max-width: 480px) {
-
+        width: 18px;
+        height: 18px;
     }
     &:nth-child(2) {
         background-image: url('../images/sns_img2.png');
