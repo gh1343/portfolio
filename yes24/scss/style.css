@@ -789,7 +789,11 @@ header {
   .p_tab {
     top: 57%;
     font-size: 11px;
+    width: 36%;
   }
+}
+.p_tab a.on {
+  color: rgb(255, 165, 0);
 }
 
 .p_tab_conts {

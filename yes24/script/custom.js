@@ -298,28 +298,10 @@ $(document).ready(function () {
     // play tab
     const Ptab = $('.p_tab > li > a');
     Ptab.click(function() {
+        Ptab.removeClass('on');
+        $(this).addClass('on');
         const index = $(this).parent().index();
         $('.p_img_wrap > div').hide().eq(index).show();
-    });
-    // tab
-    const txtH = $('.tab_txt > h4'), //누르는거
-        tcA = $('.tab_conts > a'); // 보여지는거
-    txtH.eq(0).click(function () {
-        txtH.removeClass('up');
-        $(this).addClass('up');
-        tcA.show();
-    });
-    txtH.eq(1).click(function () {
-        txtH.removeClass('up');
-        $(this).addClass('up');
-        tcA.hide();
-        $('.pre').show();
-    });
-    txtH.eq(2).click(function () {
-        txtH.removeClass('up');
-        $(this).addClass('up');
-        tcA.hide();
-        $('.eve').show();
     });
     // magazine 슬라이드1
     const personswiper1 = new Swiper(".maga1_sliderWrap", {

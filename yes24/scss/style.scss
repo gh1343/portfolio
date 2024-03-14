@@ -686,6 +686,10 @@ header {
     @media (max-width: 480px) {
         top: 57%;
         font-size: 11px;
+        width: 36%;
+    }
+    a.on {
+        color: rgb(255, 165, 0);
     }
 }
 .p_tab_conts {
