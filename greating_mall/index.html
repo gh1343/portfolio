@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리팅몰</title>
+    <link rel="stylesheet" href="scss/swiper.min.css" />
+    <link rel="stylesheet" href="scss/style.css" />
+    <script src="script/lib/jquery3.6.0.js"></script>
+    <script src="script/lib/swiper.min.js"></script>
+    <script src="script/greating.js"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="user_aria">
+                <div class="inner">
+                    <div class="menu">
+                        <a href="javascript:void(0)">로그인</a>
+                        <a href="javascript:void(0)">회원가입</a>
+                        <a href="javascript:void(0)">쿠폰등록</a>
+                        <a href="javascript:void(0)">고객센터 <i></i></a>
+                    </div>
+                    <div class="mainMid">
+                        <h1 class="logo"><a href="javascript:void(0)"><img src="img/logo.png" alt="로고 이미지" /></a></h1>
+                        <div class="choice">
+                            <a class="on" href="javascript:void(0)">건강마켓</a>
+                            <a href="javascript:void(0)">식단관리</a>
+                        </div>
+                        <nav>
+                            <div class="search">
+                                <input type="text" placeholder="그리팅 고혈압 식단 출시" />
+                                <button type="button" class="search_btn">검색</button>
+                            </div>
+                            <a class="deliver" href="javascript:void(0)">새벽 택배 배송안내</a>
+                            <a class="cart" href="javascript:void(0)">
+                                <span id="cartCnt"></span>
+                                <img src="img/icon_header_cart.png" alt="장바구니 이미지" />
+                            </a>
+                        </nav>
+                    </div>
+                    <div class="mainHeadMenuArea">
+                        <div class="all_menu">
+                            <button>
+                                <div class="ham_icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="main_tab">카테고리</span>
+                            </button>
+                            <div class="menu_wrap">
+                                <div class="menu_inner">
+                                    <ul class="menu_depth1">
+                                        <li>
+                                            <a href="javascript:void(0)">건강마켓</a>
+                                            <ul class="menu_depth2">
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">신상품</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">건강반찬</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">진한 국/ 찌개</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">계절 담은 면</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">영양가득 밥/죽</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">샐러드/샌드위치</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">베이커리</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">착한 간식/음료</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">건강한 식재료</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">안심 키즈</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">시니어 건강</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">비건/순식물성</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">맞춤 도시락</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">스페셜 패키지</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">1Table</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">모두의 맛집</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">명인명촌</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">반찬 정기구독</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">브랜드관</a>
+                                            <ul class="menu_depth2">
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">건강식품</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">농산물</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">수산물</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">축산물</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">농협</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">가공식품</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">에코라이프</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">전통주</a>
+                                                </li>
+                                                <li class="cate_slide">
+                                                    <a href="javascript:void(0)">기프트카드</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">쇼핑 팁</a>
+                                            <ul class="menu_depth2">
+                                                <li>
+                                                    <a href="javascript:void(0)">그리팅 추천</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">베스트</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">할인</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">기획전</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">이벤트</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">리뷰라운지</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">매거진</a>
+                                            <ul class="menu_depth2">
+                                                <li>
+                                                    <a href="javascript:void(0)">브랜드 소개</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">그리팅 매거진</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">그리팅 TV</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">서비스</a>
+                                            <ul class="menu_depth2">
+                                                <li>
+                                                    <a href="javascript:void(0)">배송안내</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">모바일 이용권</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">제휴 문의/안내</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">공지사항</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0)">고객센터</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gnb">
+                            <a href="javascript:void(0)">영양진단</a>
+                            <a href="javascript:void(0)">그리팅 추천</a>
+                            <a href="javascript:void(0)">베스트</a>
+                            <a href="javascript:void(0)">할인</a>
+                            <a href="javascript:void(0)">브랜드관</a>
+                            <a href="javascript:void(0)">기획전</a>
+                            <a href="javascript:void(0)">이벤트</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main_banner_wrap swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner1.jpg" alt="메인 베너 이미지1" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner2.jpg" alt="메인 베너 이미지2" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner3.jpg" alt="메인 베너 이미지3" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner4.jpg" alt="메인 베너 이미지4" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner5.jpg" alt="메인 베너 이미지5" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner6.jpg" alt="메인 베너 이미지6" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner7.jpg" alt="메인 베너 이미지7" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner8.jpg" alt="메인 베너 이미지8" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner9.jpg" alt="메인 베너 이미지9" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner10.jpg" alt="메인 베너 이미지10" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner11.jpg" alt="메인 베너 이미지11" />
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:void(0)">
+                        <img src="img/main_banner12.jpg" alt="메인 베너 이미지12" />
+                    </a>
+                </div>
+            </div>
+            <button class="arrow left"></button>
+            <button class="arrow right"></button>
+        </div>
+        <section class="part1">
+            <div class="inner">
+                <span class="topic">건강은 밥상으로부터</span>
+                <h3 class="recommand">
+                    <a href="javascript:void(0)">
+                        <strong>그리팅이 자신있게 추천드려요</strong>
+                        <i class="ico_sale">sale</i>
+                        <i class="ico_arrow"></i>
+                    </a>
+                </h3>
+                <div class="article_wrap">
+                    <div class="now-top">
+                        <ul class="box">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div class="img_wrap img_wrap_L">
+                                        <img src="img/section1_L1.jpg" alt="파트1 왼쪽 이미지" />
+                                    </div>
+                                    <div class="box_list_info">
+                                        <div class="explain">
+                                            <span>베트남 현지 셰프가 직접 만든</span>
+                                            <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                        </div>
+                                        <div class="price_wrap">
+                                            <span class="discount_per">15%</span>
+                                            <span class="none_price"><strong>7,225</strong>원</span>
+                                            <span class="discount_price">8,500원</span>
+                                        </div>
+                                        <div class="box_list_btn">
+                                            <button type="button">
+                                                <span class="add_cart">장바구니</span>
+                                            </button>
+                                            <button type="button">
+                                                <span class="gift">선물</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-area">
+                        <div class="swiper-container item_list">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)" class="slide_inner">
+                                        <div class="img_wrap">
+                                            <img src="img/section1_R1.jpg" alt="이미지1" />
+                                        </div>
+                                        <div class="ex_wrap">
+                                            <div class="explain">
+                                                <span>베트남 현지 셰프가 직접 만든</span>
+                                                <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                            </div>
+                                            <div class="price_wrap">
+                                                <span class="discount_price">8,500원</span>
+                                                <span class="discount_per">15%</span>
+                                                <span class="none_price">7,225</span>
+                                            </div>
+                                        </div>
+                                        <div class="box_list_btn">
+                                            <button type="button">
+                                                <span class="add_cart">장바구니</span>
+                                            </button>
+                                            <button type="button">
+                                                <span class="gift">선물</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)" class="slide_inner">
+                                        <div class="flex_box">
+                                            <img src="img/section1_R1.jpg" alt="이미지1" />
+                                        </div>
+                                        <div class="ex_wrap">
+                                            <div class="explain">
+                                                <span>베트남 현지 셰프가 직접 만든</span>
+                                                <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                            </div>
+                                            <div class="price_wrap">
+                                                <span class="discount_per">15%</span>
+                                                <span class="none_price">7,225</span>
+                                                <span class="discount_price">8,500원</span>
+                                            </div>
+                                        </div>
+                                        <div class="box_list_btn">
+                                            <button type="button">
+                                                <span class="add_cart">장바구니</span>
+                                            </button>
+                                            <button type="button">
+                                                <span class="gift">선물</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="javascript:void(0)" class="slide_inner">
+                                        <div class="flex_box">
+                                            <img src="img/section1_R1.jpg" alt="이미지1" />
+                                        </div>
+                                        <div class="ex_wrap">
+                                            <div class="explain">
+                                                <span>베트남 현지 셰프가 직접 만든</span>
+                                                <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                            </div>
+                                            <div class="price_wrap">
+                                                <span class="discount_per">15%</span>
+                                                <span class="none_price">7,225</span>
+                                                <span class="discount_price">8,500원</span>
+                                            </div>
+                                        </div>
+                                        <div class="box_list_btn">
+                                            <button type="button">
+                                                <span class="add_cart">장바구니</span>
+                                            </button>
+                                            <button type="button">
+                                                <span class="gift">선물</span>
+                                            </button>
+                                        </div>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
