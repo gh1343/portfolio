@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    /**
+     * gnb 이벤트 시작
+     */
     $('.gnb > li').mouseenter(function () {
         $(this).parent().addClass('active');
         $('.sub_bg').css({
@@ -14,6 +17,9 @@ $(document).ready(function () {
             'visibility':'hidden'
         });
     });
+    /**
+     * 모바일 햄버거 버튼 시작
+     */
     $('.mb_icon').click(function () {
         $('.mobile_popup').addClass('on');
         document.body.style.overflow = 'hidden';
@@ -31,16 +37,50 @@ $(document).ready(function () {
             $('header').css('background', 'none');
         }
     });
-    // btn
-    $('.btn_2').click(function () {
-        $('tbc').removeClass('active');
-        $('.tab_conts1').addClass('active');
-    });
+    /**
+     * 로그인 버튼 시작
+     */
     $('.sns_conts:nth-child(2)').click(function () {
         $('.modal_wrap').css('display', 'block');
     });
     $('.btn_close').click(function () {
         $('.modal_wrap').css('display', 'none');
+    });
+    // 공백이 아니고, 문자 또는 숫자가 하나씩 입력 되면 로그인 버튼 색변화
+    let idInput;
+    let pwInput;
+    $('.id_para, .pw_para').on('input', function() {
+        idInput = $('.id_para').val();
+        pwInput = $('.pw_para').val();
+        let koreanRegex = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+        if (koreanRegex.test(idInput)) {
+            // 한글이 입력되면 값을 빈 문자열로 설정하여 한글 입력을 막음
+            $('.id_para').val('');
+        }
+        if(idInput !== '' && pwInput !== '') {
+            $('.login_class').css({
+                'background-color' : '#000',
+                'color' : '#fff'
+            });
+        } else {
+            $('.login_class').css({
+                'background-color' : '#e0e0e0',
+                'color' : '#777'
+            });
+        }
+    });
+    $('.login_class').click(function(){
+        idInput = $('.id_para').val();
+        pwInput = $('.pw_para').val();
+        if (idInput == 'boysheep' && pwInput == '123') {
+            alert('가입된 아이디 입니다.');
+        } else if (idInput == 'boysheep' && pwInput != '123') {
+            alert('비밀번호가 다릅니다.');
+        } else if (idInput != 'boysheep') {
+            alert('회원이 아닙니다.');
+        } else { 
+            alert('회원이 아닙니다.');
+        }
     });
     // gotop
     $('.gotop').click(function () {
@@ -56,6 +96,9 @@ $(document).ready(function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     });
+    /**
+     * 영화 슬라이드 시작
+     */
     const movieSlidetab1 = new Swiper(".slides_wrap1", {
         navigation: {
             nextEl: ".mbr1",

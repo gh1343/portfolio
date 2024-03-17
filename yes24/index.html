@@ -75,28 +75,22 @@
         </header>
         <div class="main">
             <div class="s-main">
-                <a href="javascript:void(0)">
-                    <div class="main_txt">
-                        <p><span>play24</span></p>
-                        <h6>어느 한국 가족의 원더풀한 이야기</h6>
-                    </div>
-                </a>
+                <div class="main_txt">
+                    <p><span>play24</span></p>
+                    <h6>어느 한국 가족의 원더풀한 이야기</h6>
+                </div>
             </div>
             <div class="s-main">
-                <a href="javascript:void(0)">
-                    <div class="main_txt">
-                        <p><span>허남웅 영화경</span></p>
-                        <h6>DC 유니버스의 가디언으로 나서다</h6>
-                    </div>
-                </a>
+                <div class="main_txt">
+                    <p><span>허남웅 영화경</span></p>
+                    <h6>DC 유니버스의 가디언으로 나서다</h6>
+                </div>
             </div>
             <div class="s-main">
-                <a href="javascript:void(0)">
-                    <div class="main_txt">
-                        <p><span>play24</span></p>
-                        <h6>시간에 굴복할 것인가, 극복할 것인가</h6>
-                    </div>
-                </a>
+                <div class="main_txt">
+                    <p><span>play24</span></p>
+                    <h6>시간에 굴복할 것인가, 극복할 것인가</h6>
+                </div>
             </div>
         </div>
         <section class="movie">
@@ -957,13 +951,46 @@
     <!-- 로그인 팝업 -->
     <div class="modal_wrap">
         <div class="modal">
-            <h2>로그인</h2>
-            <p><input type="text" placeholder="아이디" /></p>
-            <p><input type="text" placeholder="비밀번호" /></p>
-            <p><a href="javascript:void(0)">로그인</a></p>
-            <div class="btn_close">
-                <span></span>
-                <span></span>
+            <div class="modal_inner">
+                <div class="login_head">
+                    <h2>로그인</h2>
+                    <div class="btn_close">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <input type="text" placeholder="아이디" class="id_para" />
+                <input type="password" placeholder="비밀번호" class="pw_para" />
+                <div class="chk_util">
+                    <div class="lt">
+                        <input type="checkbox" id="cheid_save" />
+                        <label for="cheid_save">
+                            아이디 저장
+                        </label>
+                    </div>
+                    <div class="rt">
+                        <a class="fast_login" href="javascript:void(0)">휴대폰 간편로그인</a>
+                    </div>
+                </div>
+                <button id="login_btn" type="button" class="login_class">
+                    로그인
+                </button>
+                <div class="link">
+                    <a href="javascript:void(0)">ID/PW 찾기</a>
+                    <a href="javascript:void(0)">회원가입</a>
+                    <a href="javascript:void(0)">비회원 예매확인</a>
+                </div>
+                <div class="sns_login">
+                    <a href="javascript:void(0)">
+                        <img src="images/ico-naver.png" alt="네이버" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="images/ico-kakao.png" alt="카카오" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="images/ico-payco.png" alt="페이코" />
+                    </a>
+                </div>
             </div>
         </div>
     </div>
