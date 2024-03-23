@@ -1,33 +1,3 @@
-:root {
-  --white: #fcfaf3;
-  --themecolor: #282552;
-  --orange: rgb(237, 142, 59);
-}
-
-body {
-  margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p, ul, ol, li {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  width: 100%;
-  vertical-align: top;
-}
-
-section {
-  position: relative;
-  background-color: var(--white);
-}
-
 /* common */
 #fullpage {
   width: 100%;
@@ -508,4 +478,4 @@ section {
   width: 110px;
 }
 
-/* sdedu detail*//*# sourceMappingURL=style.css.map */
+/* sdedu detail*/

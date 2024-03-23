@@ -1,55 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
-:root {
-  --white: rgb(246, 246, 246);
-  --gnbhover: rgb(255, 69, 0);
-  --subhover: rgb(255, 165, 0);
-}
-
-html, body {
-  width: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: "Nanum Gothic", sans-serif;
-  background-color: rgb(255, 255, 255);
-  font-size: 13px;
-  line-height: 1.2;
-}
-@media (max-width: 1024px) {
-  body::-webkit-scrollbar {
-    display: none;
-    -webkit-appearance: none;
-  }
-}
-
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  width: 100%;
-  vertical-align: top;
-}
-
-.inner {
-  width: 1100px;
-  margin: 0 auto;
-}
-
+@import "https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap";
 /* common */
 #container {
   width: 100%;
@@ -57,7 +7,7 @@ img {
 }
 
 /* header */
-header {
+.top_head {
   position: fixed;
   top: 0;
   left: 0;
@@ -69,13 +19,13 @@ header {
   height: 70px;
 }
 @media (max-width: 1024px) {
-  header {
+  .top_head {
     padding: 0 20px;
     box-sizing: border-box;
   }
 }
 @media (max-width: 480px) {
-  header {
+  .top_head {
     height: 45px;
   }
 }
@@ -1373,13 +1323,13 @@ header {
 }
 
 /* footer pc */
-footer.pc_ft {
+.pc_ft {
   min-width: 1040px;
   padding: 0 0 14px;
   background-color: #f8f8f8;
 }
 @media (max-width: 1024px) {
-  footer.pc_ft {
+  .pc_ft {
     display: none;
   }
 }
@@ -1474,11 +1424,11 @@ footer.pc_ft {
 }
 
 /* footer mobile */
-footer.mb_ft {
+.mb_ft {
   display: none;
   background-color: #f2f2f2;
 }
-footer.mb_ft::before {
+.mb_ft::before {
   content: "";
   display: block;
   width: 100%;
@@ -1486,7 +1436,7 @@ footer.mb_ft::before {
   background-color: #f1f1f1;
 }
 @media (max-width: 1024px) {
-  footer.mb_ft {
+  .mb_ft {
     display: block;
   }
 }
@@ -2108,4 +2058,4 @@ dl.navi_link_list dd a.new::after {
 
 .kakaoch {
   background: rgba(0, 0, 0, 0) url("../images/chanel.svg") center/contain scroll no-repeat;
-}/*# sourceMappingURL=style.css.map */
+}

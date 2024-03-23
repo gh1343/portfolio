@@ -1,54 +1,13 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
-:root {
-    --white: rgb(246, 246, 246);
-    --gnbhover: rgb(255, 69, 0);
-    --subhover: rgb(255, 165, 0);
-}
-html, body {
-    width: 100%;
-}
-body {
-    margin: 0;
-    font-family: 'Nanum Gothic', sans-serif;
-    background-color: rgb(255, 255, 255);
-    font-size: 13px;
-    line-height: 1.2;
-    @media (max-width: 1024px) {
-        &::-webkit-scrollbar {
-            display: none;
-            -webkit-appearance: none;
-        }
-    }
-}
-ul, ol {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-img {
-    width: 100%;
-    vertical-align: top;
-}
-.inner {
-    width: 1100px;
-    margin: 0 auto;
-}
+@import "https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap";
+@import "./mixin";
 /* common */
 #container {
     width: 100%;
     overflow: hidden;
 }
 /* header */
-header {
+.top_head {
     position: fixed;
     top: 0;
     left: 0;
@@ -58,13 +17,13 @@ header {
     align-items: center;
     width: 100%;
     height: 70px;
-    @media (max-width: 1024px) {
-       padding: 0 20px;
-       box-sizing: border-box;
+    @include desktop {
+        padding: 0 20px;
+        box-sizing: border-box;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         height: 45px;
-     }
+    }
 }
 /* logo */
 .logo a {
@@ -76,10 +35,10 @@ header {
     text-indent: -999px;
     overflow: hidden;
     margin-left: 70px;
-    @media (max-width: 1024px) {
+    @include desktop {
         margin-left: 0;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         width: 79px;
         height: 16px;
     }
@@ -121,7 +80,7 @@ header {
         opacity: 1;
 		visibility: visible;
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         display: none;
     }
 }
@@ -170,7 +129,7 @@ header {
     &.on {
         display: flex;
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         margin-right: 0;
     }
 }
@@ -184,24 +143,24 @@ header {
     background-size: contain;
     text-indent: -999px;
     overflow: hidden;
-    @media (max-width: 480px) {
+    @include mobile {
         width: 16px;
         height: 16px;
     }
     &:nth-child(2) {
         background-image: url('../images/sns_img2.png');
-        @media (max-width: 1024px) {
+        @include desktop {
             display: none;
         }
     }
     &:nth-child(3) {
         background-image: url('../images/sns_img3.png');
         margin-right: 0;
-        @media (max-width: 1024px) {
+        @include desktop {
             display: none;
         }
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         margin-right: 0;
     }
 }
@@ -221,7 +180,7 @@ header {
         background-color: #eee;
         margin-bottom: 3px;
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         display: block;
     }
 }
@@ -231,10 +190,10 @@ header {
     width: 100%;
     height: 78vh; // 100vh
     overflow: hidden;
-    @media (max-width: 1024px) {
+    @include desktop {
         height: 49vh;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         height: 35vh;
     }
 }
@@ -298,25 +257,25 @@ header {
     text-align: center;
     color: rgb(241, 241, 241);
     user-select: none;
-    @media (max-width: 480px) {
+    @include mobile {
         top: 35%;
     }
     h6 {
         font-size: 40px;
         white-space: nowrap;
-        @media (max-width: 1024px) {
+        @include desktop {
             font-size: 27px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             font-size: 14px;
         }
     }
     p {
         font-size: 25px;
-        @media (max-width: 1024px) {
+        @include desktop {
             font-size: 20px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             font-size: 14px;
         }
         span {
@@ -330,7 +289,7 @@ header {
 	// padding: 120px 0;
     user-select: none;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(232, 232, 232, 0.37));
-    @media (max-width: 1024px) {
+    @include desktop {
         background-image: none;
     }
 }
@@ -339,7 +298,7 @@ header {
     width: 980px;
     overflow: hidden;
     padding: 50px 30px 60px;
-    @media (max-width: 1024px) {
+    @include desktop {
         width: 100%;
         padding: 28px 21px 28px;
     }
@@ -361,7 +320,7 @@ header {
         }
         &:not(:first-child) {
             margin-left: 32px;
-            @media (max-width: 480px) {
+            @include mobile {
                 margin-left: 20px;
             }
             @media (max-width: 280px) {
@@ -376,7 +335,7 @@ header {
                 height: 14px;
                 margin-top: -7px;
                 background-color: #d8d8d8;
-                @media (max-width: 480px) {
+                @include mobile {
                     left: -10px;
                 }
                 @media (max-width: 280px) {
@@ -385,10 +344,10 @@ header {
             }
         }
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 18px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 16px;
     }
     @media (max-width: 280px) {
@@ -402,46 +361,25 @@ header {
         width: 100%;
         margin: 0 auto;
         overflow: visible;
-        @media (max-width: 1024px) {
-            // width: calc(160px * 8);
-        }
-        @media (max-width: 480px) {
-            // width: calc(160px * 10);
-        }
-    }
-    .swiper-wrapper {
-        @media (max-width: 1024px) {
-        }
     }
     .swiper-slide {
         &.blank { 
             display: none;
         }
-        @media (max-width: 1024px) {
+        @include desktop {
             width: 160px !important;
             max-width: 160px;
-            // height: 300px !important;
-            // max-height: 300px;
             &.blank {
                 display: block;
                 width: 30px !important;
             }
         }
-        // @media (max-width: 480px) {
-        //     width: 150px !important;
-        // }
-        // @media (max-width: 480px) {
-        //     width: 150px !important;
-        // }
     }
 }
 .mv2, .mv3, .mv4 {
     display: none;
 } 
 .m_list {
-    // @media (max-width: 1024px) {
-    //     transition-timing-function: linear;
-    // }
     .img_wrap {
         width: 100%;
         position: relative;
@@ -473,7 +411,7 @@ header {
     }
 }
 .arrow_wrap {
-    @media (max-width: 1024px) {
+    @include desktop {
         display: none;
     }
 } 
@@ -505,7 +443,7 @@ header {
             transform: rotate(-180deg);
         }
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         display: none;   
     }
 }
@@ -555,7 +493,7 @@ header {
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 16px;
         margin-top: 12px;
     }
@@ -566,7 +504,7 @@ header {
     font-size: 14px;
     color: #444;
     text-align: center;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 13px;
         margin-top: 4px;
     }
@@ -581,13 +519,13 @@ header {
 .p_img_wrap {
 	position: relative;
 	height: 60vh;
-    @media (max-width: 1024px) {
+    @include desktop {
         height: 43vh;
     }
     @media (max-width: 710px) {
         height: 28vh;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         height: 23vh;
     }
 }
@@ -622,7 +560,7 @@ header {
 	background: url('../images/play_button.png') no-repeat center center;
 	background-size: cover;
 	cursor: pointer;
-    @media (max-width: 1024px) {
+    @include desktop {
         width: 45px;
         height: 45px;
     }
@@ -631,7 +569,7 @@ header {
         height: 38px;
         top: 12%;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         width: 27px;
         height: 27px;
         top: 14%;
@@ -649,25 +587,25 @@ header {
     }
 	> h2 {
 		font-size: 50px;
-        @media (max-width: 1024px) {
+        @include desktop {
             font-size: 33px;
         }
         @media (max-width: 710px) {
             font-size: 25px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             font-size: 20px;
         }
 	}
 	> p {
 		font-size: 16px;
-        @media (max-width: 1024px) {
+        @include desktop {
             font-size: 14px;
         }
         @media (max-width: 710px) {
             font-size: 12px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             font-size: 11px;
         }
 	}
@@ -684,7 +622,7 @@ header {
     @media (max-width: 710px) {
         top: 68%;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         top: 57%;
         font-size: 11px;
         width: 36%;
@@ -711,13 +649,13 @@ header {
 	.vod {
 		height: 100%;
 	}
-    @media (max-width: 1024px) {
+    @include desktop {
         height: 43vh;
     }
     @media (max-width: 710px) {
         height: 28vh;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         height: 21vh;
     }
 }
@@ -735,7 +673,7 @@ header {
 /* maga1 */
 .maga1 {
 	padding: 120px 0 150px;
-    @media (max-width: 1024px) {
+    @include desktop {
         padding: 0;
         &::before {
             content: '';
@@ -748,7 +686,7 @@ header {
 }
 .maga2 {
     padding: 0 0 120px 0;
-    @media (max-width: 1024px) {
+    @include desktop {
         padding: 0;
         &::before {
             content: "";
@@ -763,7 +701,7 @@ header {
 	margin-bottom: 55px;
 	font-size: 37px;
 	text-align: center;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 15px;
         text-align: left;
         padding-left: 21px;
@@ -779,53 +717,53 @@ header {
 	// box-sizing: border-box;
 }
 .maga1_inner {
-    @media (max-width: 1024px) {
+    @include desktop {
         padding: 0 21px;
         width: auto;
     }
-    @media (max-width: 860px) {
+    @include tablet {
         flex-direction: column;
         align-items: center;
     }
 }
 .maga2_inner {
-    @media (max-width: 1024px) {
+    @include desktop {
         padding: 14px 21px;
         width: auto;
     }
-    @media (max-width: 860px) {
+    @include tablet {
         flex-direction: column-reverse;
         align-items: center;
     }
 }
 .maga1_left {
     margin-right: 50px;
-    @media (max-width: 860px) {
+    @include tablet {
         margin-right: 0;
         margin-bottom: 10px;
     }
     > div {
         width: 100%;
-        @media (max-width: 860px) {
+        @include tablet {
             width: 300px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             width: 210px;
         }
     }
 }
 .maga2_right {
     margin-left: 50px;
-    @media (max-width: 860px) {
+    @include tablet {
         margin-left: 0;
         margin-bottom: 10px;
     }
     > div {
         width: 100%;
-        @media (max-width: 860px) {
+        @include tablet {
             width: 300px;
         }
-        @media (max-width: 480px) {
+        @include mobile {
             width: 210px;
         }
     }
@@ -836,7 +774,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     width: 60%;
-    @media (max-width: 860px) {
+    @include tablet {
         width: 100%;
     }
 }
@@ -848,7 +786,7 @@ header {
 .maga1_sliderWrap, .maga2_sliderWrap {
     width: 70%;
     .swiper-slide {
-        @media (max-width: 480px) {
+        @include mobile {
             width: 80px !important;
         }
     }
@@ -862,7 +800,7 @@ header {
 		height: 38px;
 		background-repeat: no-repeat;
 		background-size: contain;
-        @media (max-width: 480px) {
+        @include mobile {
             display: none;
         }
         &.si_left {
@@ -887,7 +825,7 @@ header {
 		height: 38px;
 		background-repeat: no-repeat;
 		background-size: contain;
-        @media (max-width: 480px) {
+        @include mobile {
             display: none;
         }
         &.si_left2 {
@@ -915,28 +853,28 @@ header {
 .top h2 {
     text-align: center;
 	font-size: 20px;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 14px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 13px;
     }
 }
 .bottom h2 {
 	font-size: 16px;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 14px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 13px;
     }
 }
 .top p {
 	font-size: 14px;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 13px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         // font-size: 12px;
     }
 }
@@ -946,10 +884,10 @@ header {
 	line-height: 1.2;
 	text-align: center;
     white-space: nowrap;
-    @media (max-width: 1024px) {
+    @include desktop {
         font-size: 13px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 12px;
         letter-spacing: -1.5px;
     }
@@ -986,7 +924,7 @@ header {
     @media (max-width: 768px) {
         width: 250px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         width: 160px;
     }
     img {
@@ -1011,7 +949,7 @@ header {
         font-size: 16px;
         width: 200px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 13px;
         width: 160px;
         margin-top: 13px;
@@ -1026,7 +964,7 @@ header {
     @media (max-width: 768px) {
         font-size: 13px;
     }
-    @media (max-width: 480px) {
+    @include mobile {
         font-size: 12px;
         margin-top: 2px;
     }
@@ -1042,7 +980,7 @@ header {
     width: 980px;
     height: 100%;
     margin: 0 auto;
-    @media (max-width: 1024px) {
+    @include desktop {
         width: auto;
         padding: 0 21px;
     }
@@ -1087,7 +1025,7 @@ header {
     line-height: 1.417em;
     border: 1px solid #f4f4f4;
     border-radius: 11px;
-    @media (max-width: 1024px) {
+    @include desktop {
         padding: 2px 0 3px;
     }
 }
@@ -1172,11 +1110,11 @@ header {
     margin: 29px auto 0;
 }
 /* footer pc */
-footer.pc_ft {
+.pc_ft {
     min-width: 1040px;
     padding: 0 0 14px;
     background-color: #f8f8f8;
-    @media (max-width: 1024px) {
+    @include desktop {
         display: none;
     }
 }
@@ -1262,7 +1200,7 @@ footer.pc_ft {
     display: none;
 }
 /* footer mobile */
-footer.mb_ft {
+.mb_ft {
     display: none;
     background-color: #f2f2f2;
     &::before {
@@ -1272,7 +1210,7 @@ footer.mb_ft {
         height: 20px;
         background-color: #f1f1f1;
     }
-    @media (max-width: 1024px) {
+    @include desktop {
         display: block;
     }
 }
