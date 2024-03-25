@@ -1,15 +1,11 @@
-:root {
-    --white: rgb(246, 246, 246);
-    --gnbhover: rgb(255, 69, 0);
-    --subhover: rgb(255, 165, 0);
-}
+@charset "UTF-8";
 html, body {
     width: 100%;
 }
 body {
     margin: 0;
-    font-family: 'Nanum Gothic', sans-serif;
-    background-color: rgb(255, 255, 255);
+    font-family: 'nanum-normal';
+    background-color: rgb(246, 246, 246);
     font-size: 13px;
     line-height: 1.2;
 }

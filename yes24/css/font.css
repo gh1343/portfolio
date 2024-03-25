@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'nanum-normal';
+    src: url('../font/Nanum_Gothic/NanumGothic-Regular.ttf');
+}
+@font-face {
+    font-family: 'nanum-bold';
+    src: url('../font/Nanum_Gothic/NanumGothic-Bold.ttf');
+}

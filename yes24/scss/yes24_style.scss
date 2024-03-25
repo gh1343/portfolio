@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap";
 @import "./mixin";
 /* common */
 #container {
@@ -43,13 +42,18 @@
         height: 16px;
     }
 }
-/* gnb */
+/* navi gnb */
+.gnb_wrap {
+    width: 40%;
+    @include desktop {
+        display: none;
+    }
+}
 .gnb {
     display: flex;
 	justify-content: space-between;
     font-size: 16px;
-    color: var(--white);
-	width: 40%;
+    color: $white;
     > li {
         position: relative;
         &:last-child {
@@ -63,11 +67,11 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background-color: var(--subhover);
+            background-color: $oranged;
             transition: all 0.4s;
         }
         &:hover > a, &:focus > a {
-            color: var(--gnbhover);
+            color: $red;
             &::before {
                 width: 100%;
             }
@@ -79,9 +83,6 @@
     &.active .sub {
         opacity: 1;
 		visibility: visible;
-    }
-    @include desktop {
-        display: none;
     }
 }
 /* sub */
@@ -97,7 +98,7 @@
     li {
         margin-top: 12px;
         a:hover {
-            color: var(--subhover);
+            color: $oranged;
         }
     }
     &.on {
@@ -177,7 +178,7 @@
         display: block;
         width: 20px;
         height: 2px;
-        background-color: #eee;
+        background-color: $white;
         margin-bottom: 3px;
     }
     @include desktop {
@@ -255,7 +256,7 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: rgb(241, 241, 241);
+    color: $white;
     user-select: none;
     @include mobile {
         top: 35%;
@@ -302,9 +303,6 @@
         width: 100%;
         padding: 28px 21px 28px;
     }
-    @media (max-width: 710px) {
-        width: 100%;
-    }
 }
 .m_txt {
 	display: flex;
@@ -312,19 +310,16 @@
 	font-size: 26px;
     > li {
         position: relative;
-        color: #666;
+        color: $gray;
         font-weight: normal;
         &.active {
-            color: #000;
+            color: $black;
             font-weight: bold;
         }
         &:not(:first-child) {
             margin-left: 32px;
             @include mobile {
                 margin-left: 20px;
-            }
-            @media (max-width: 280px) {
-                margin-left: 10px;
             }
             &::before {
                 content: '';
@@ -338,9 +333,6 @@
                 @include mobile {
                     left: -10px;
                 }
-                @media (max-width: 280px) {
-                    left: -5px;
-                }
             }
         }
     }
@@ -349,9 +341,6 @@
     }
     @include mobile {
         font-size: 16px;
-    }
-    @media (max-width: 280px) {
-        font-size: 12px;
     }
 }
 .m_list_wrap {
@@ -472,11 +461,11 @@
         line-height: 1.462em;
         border-radius: 4px;
         &:first-child {
-            color: #666;
-            background-color: #fff;
+            color: $gray;
+            background-color: $white;
         }
         &:last-child {
-            color: #fff;
+            color: $white;
             background-color: #fb4357;
             margin-top: 6px;
         }
@@ -617,10 +606,12 @@
 	transform: translateX(-50%);
 	display: flex;
     justify-content: space-between;
+    font-size: 16px;
     width: 30%;
 	user-select: none;
     @media (max-width: 710px) {
         top: 68%;
+        font-size: 14px;
     }
     @include mobile {
         top: 57%;
@@ -628,7 +619,7 @@
         width: 36%;
     }
     a.on {
-        color: rgb(255, 165, 0);
+        color: $oranged;
     }
 }
 .p_tab_conts {
@@ -702,7 +693,7 @@
 	font-size: 37px;
 	text-align: center;
     @include desktop {
-        font-size: 15px;
+        font-size: 17px;
         text-align: left;
         padding-left: 21px;
         padding-top: 14px;
@@ -900,8 +891,8 @@
         font-size: 26px;
         color: #222;
         line-height: 1.423em;
-        @media (max-width: 768px) {
-            font-size: 15px;
+        @include tablet {
+            font-size: 17px;
             text-align: left;
             padding-top: 14px;
             margin-bottom: 30px;
@@ -910,7 +901,7 @@
 }
 .event_inner {
     width: 980px;
-    @media (max-width: 768px) {
+    @include tablet {
         width: auto;
         padding-left: 21px;
         padding-top: 14px;
@@ -921,7 +912,7 @@
 }
 .rolling_list {
     width: 310px;
-    @media (max-width: 768px) {
+    @include tablet {
         width: 250px;
     }
     @include mobile {
@@ -945,7 +936,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 310px;
-    @media (max-width: 768px) {
+    @include tablet {
         font-size: 16px;
         width: 200px;
     }
@@ -959,9 +950,9 @@
     display: block;
     margin-top: 4px;
     font-size: 14px;
-    color: #666;
+    color: $gray;
     line-height: 1.429em;
-    @media (max-width: 768px) {
+    @include tablet {
         font-size: 13px;
     }
     @include mobile {
@@ -989,7 +980,7 @@
     display: flex;
     border: 1px solid #e4e4e4;
     border-radius: 10px;
-    @media (max-width: 900px) {
+    @include tablet {
         display: none;
     }
 }
@@ -1021,7 +1012,7 @@
     padding: 2px 15px 3px;
     font-weight: 400;
     font-size: 12px;
-    color: #666;
+    color: $gray;
     line-height: 1.417em;
     border: 1px solid #f4f4f4;
     border-radius: 11px;
@@ -1098,7 +1089,7 @@
     p {
         margin-top: 24px;
         font-size: 12px;
-        color: #666;
+        color: $gray;
         letter-spacing: -0.030em;
         line-height: 17px;
         margin-bottom: 0;
@@ -1128,7 +1119,7 @@
     a {
         font-weight: 500;
         font-size: 13px;
-        color: #666;
+        color: $gray;
         line-height: 1.462em;
     }
 }
@@ -1142,7 +1133,7 @@
 }
 .company_info {
     font-size: 12px;
-    color: #666;
+    color: $gray;
     line-height: 1.667em;
     address {
         font-style: normal;
@@ -1172,7 +1163,7 @@
         position: relative;
         height: 34px;
         font-size: 12px;
-        color: #666;
+        color: $gray;
         line-height: 34px;
         border: none;
         background-color: transparent;
@@ -1191,7 +1182,7 @@
     height: 34px;
     margin-left: -1px;
     font-size: 14px;
-    color: #fff;
+    color: $white;
     line-height: 1.429em;
     background-color: #9e9e9e;
     vertical-align: top;
@@ -1339,7 +1330,7 @@
 	padding: 20px;
 	border-top-left-radius: 20px;
 	border-bottom-right-radius: 20px;
-	background-color: #fff;
+	background-color: $white;
     box-sizing: border-box;
 	.id_para, .pw_para {
         display: block;
@@ -1360,7 +1351,7 @@
             visibility: hidden;
         }
         &:focus, &:hover {
-            border-color: #666;
+            border-color: $gray;
         }
     }
     .pw_para {
@@ -1371,7 +1362,7 @@
             visibility: hidden;
         }
         &:focus, &:hover {
-            border-color: #666;
+            border-color: $gray;
         }
     }
 	a {
@@ -1384,7 +1375,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid $black;
 }
 .btn_close {
     position: relative;
@@ -1500,8 +1491,8 @@
 	font-size: 17px;
 	font-weight: bold;
 	border-radius: 50%;
-	background-color: #000;
-	border: 1px solid #000;
+	background-color: $black;
+	border: 1px solid $black;
 	color: #eee;
     z-index: 9999;
 }
@@ -1547,7 +1538,7 @@
     align-items: center;
     min-height: 50px;
     padding: 12px 20px 13px;
-    background: linear-gradient(to right, #fb4357 0, #f14f55 41%, #ef642f 100%);
+    background: rgba(0, 0, 0, 0.7);
     box-sizing: border-box;
     .close {
         position: relative;
@@ -1636,7 +1627,7 @@ ul.navi_link_list {
             display: flex;
             width: 100%;
             height: 100%;
-            color: #fff;
+            color: $white;
             font-size: 12px;
             background-color: #1f232b;
             border-radius: 6px;
@@ -1663,10 +1654,10 @@ ul.navi_link_list {
     padding: 4px;
     font-weight: 700;
     font-size: .625em;
-    color: #fff;
+    color: $white;
     line-height: 1em;
     text-align: center;
-    text-shadow: 1px 1px #000;
+    text-shadow: 1px 1px $black;
     background-color: rgba(0, 0, 0, .3);
     border-radius: 0 0 0 6px;
 }
@@ -1680,7 +1671,7 @@ dl.navi_link_list {
         width: 100%;
         margin-bottom: 14px;
         font-size: 1.125em;
-        color: #fff;
+        color: $white;
         line-height: 1.222em;
         &+dd {
             border-top: none medium rgba(0, 0, 0, 0);
@@ -1696,7 +1687,7 @@ dl.navi_link_list {
         flex: 1 1;
         flex-basis: 50%;
         margin: 0;
-        background-color: #2b2f37;
+        background-color: $heavy_gray;
         box-sizing: border-box;
         border-top: 1px solid rgba(149, 151, 155, .1);
         &:nth-child(odd) {
@@ -1722,7 +1713,7 @@ dl.navi_link_list {
                 padding-top: 1px;
                 font-weight: 700;
                 font-size: .714em;
-                color: #fff;
+                color: $white;
                 line-height: 1.6em;
                 background-color: #fb4357;
                 border-radius: 50%;
@@ -1748,7 +1739,7 @@ dl.navi_link_list {
     justify-content: space-between;
     position: relative;
     padding: 17px 0 19px;
-    background-color: #2b2f37;
+    background-color: $heavy_gray;
     &::before {
         content: "";
         display: flex;
@@ -1757,7 +1748,7 @@ dl.navi_link_list {
         top: 0;
         width: 20px;
         height: 100%;
-        background-color: #2b2f37;
+        background-color: $heavy_gray;
     }
     &::after {
         content: "";
@@ -1767,7 +1758,7 @@ dl.navi_link_list {
         top: 0;
         width: 20px;
         height: 100%;
-        background-color: #2b2f37;
+        background-color: $heavy_gray;
     }
     .navi_sns_list {
         display: flex;
@@ -1782,7 +1773,7 @@ dl.navi_link_list {
         margin-right: 6px;
         font-weight: 500;
         font-size: .875em;
-        color: #fff;
+        color: $white;
         line-height: 1.214em;
     }
     i {
