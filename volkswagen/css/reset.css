@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body {
+    font-family: 'noto-normal';
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit
+}
+html, body {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    min-width: 1200px;
+}
+.inner {
+    width: 1180px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.inner a, p {
+    color: white;
+}
+.brand_source, .brand_news {
+    color: white;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}

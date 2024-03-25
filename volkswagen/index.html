@@ -1,392 +1,377 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>volkswagen</title>
-  <link rel="stylesheet" href="css/renewal.css">
-  <script src="script/lib/jquery3.6.0.js"></script>
-  <script src="script/lib/jquery-transform.js"></script>
-  <script src="script/lib/jquery-ui.min.js"></script>
-  <script src="script/custom.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>volkswagen</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/renewal.css" />
+    <script src="script/lib/jquery3.6.0.js"></script>
+    <script src="script/custom.js"></script>
 </head>
-
 <body>
-  <div id="container">
-    <!-- header -->
-    <header>
-      <div class="header_top">
-        <div class="inner header_top_inner">
-          <ul class="utile_left">
-            <li><a href="#none">폭스바겐소식</a></li>
-            <li><a href="#none">IR</a></li>
-            <li><a href="#none">WORLDWIDE</a></li>
-            <li><a href="#none">EN Brochure</a></li>
-          </ul>
-          <ul class="utile_right">
-            <li><a href="#none">로그인</a></li>
-            <li><a href="#none">회원가입</a></li>
-            <li><a href="#none">마이폭스바겐</a></li>
-            <li><a href="#none">SEARCH </a></li>
-          </ul>
-        </div>
-      </div>
-      <nav class="header_btm">
-        <div class="inner header_btm_inner">
-          <ul class="gnb_left">
-            <li><a href="#none">차량</a>
-              <div class="ctb">
-                <div class="car_tab_top">
-                  <div class="inner car_wrap">
-                    <div class="mu on"><input type="radio" name="kind" checked>전체</div>
-                    <div class="mu"><input type="radio" name="kind">승용</div>
-                    <div class="mu"><input type="radio" name="kind">suv</div>
-                  </div>
+    <div id="container">
+        <!-- header -->
+        <header class="top_head">
+            <div class="header_top">
+                <div class="inner header_top_inner">
+                    <ul class="utile_left">
+                        <li><a href="javascript:void(0)">폭스바겐소식</a></li>
+                        <li><a href="javascript:void(0)">IR</a></li>
+                        <li><a href="javascript:void(0)">WORLDWIDE</a></li>
+                        <li><a href="javascript:void(0)">EN Brochure</a></li>
+                    </ul>
+                    <ul class="utile_right">
+                        <li><a href="javascript:void(0)">로그인</a></li>
+                        <li><a href="javascript:void(0)">회원가입</a></li>
+                        <li><a href="javascript:void(0)">마이폭스바겐</a></li>
+                        <li><a href="javascript:void(0)">SEARCH </a></li>
+                    </ul>
                 </div>
-                <div class="car_tab_btm">
-                  <div class="car_pic_top">
-                    <a href="none" class="car_pic">
-                      <img src="img/t-roc_fixed.png" alt="c_1">
-                      <span>T-Roc</span>
-                    </a>
-                    <a href="none" class="car_pic">
-                      <img src="img/tiguan_fixed.png" alt="c_2">
-                      <span>Tiguan</span>
-                    </a>
-                    <a href="none" class="car_pic">
-                      <img src="img/toareg_fixed.png" alt="c_3">
-                      <span>touareg</span>
-                    </a>
-                  </div>
-                  <div class="car_pic_btm">
-                    <a href="none" class="car_pic">
-                      <img src="img/jetta_fixed.png" alt="c_4">
-                      <span>Jetta</span>
-                    </a>
-                    <a href="none" class="car_pic">
-                      <img src="img/parssat_fixed.png" alt="c_5">
-                      <span>Passat</span>
-                    </a>
-                    <a href="none" class="car_pic">
-                      <img src="img/arteon_fixed.png" alt="c_6">
-                      <span>Arteon</span>
-                    </a>
-                  </div>
+            </div>
+            <nav class="header_btm">
+                <div class="inner header_btm_inner">
+                    <ul class="gnb_left">
+                        <li><a href="javascript:void(0)">차량</a>
+                            <div class="ctb">
+                            <div class="car_tab_top">
+                                <div class="inner car_wrap">
+                                    <label for="mu1" class="mu on"><input type="radio" name="kind" checked id="mu1" />전체</label>
+                                    <label for="mu2" class="mu"><input type="radio" name="kind" id="mu2" />승용</label>
+                                    <label for="mu3" class="mu"><input type="radio" name="kind" id="mu3" />suv</label>
+                                </div>
+                            </div>
+                            <div class="car_tab_btm">
+                                <div class="car_pic_top">
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/t-roc_fixed.png" alt="티록" />
+                                        <span>T-Roc</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/tiguan_fixed.png" alt="티구안" />
+                                        <span>Tiguan</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/toareg_fixed.png" alt="투아렉" />
+                                        <span>touareg</span>
+                                    </a>
+                                </div>
+                                <div class="car_pic_btm">
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/jetta_fixed.png" alt="제타" />
+                                        <span>Jetta</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/parssat_fixed.png" alt="파사트" />
+                                        <span>Passat</span>
+                                    </a>
+                                    <a href="javascript:void(0)" class="car_pic">
+                                        <img src="img/arteon_fixed.png" alt="아테온" />
+                                        <span>Arteon</span>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)">구매정보</a>
+                            <div class="btm_tab">
+                                <ul class="car_purchase">
+                                    <li><a href="javascript:void(0)">온라인견적</a></li>
+                                    <li><a href="javascript:void(0)">상품 추천</a></li>
+                                    <li><a href="javascript:void(0)">모델 비교</a></li>
+                                    <li><a href="javascript:void(0)">카탈로그/가격표</a></li>
+                                    <li><a href="javascript:void(0)">이달의 구매혜택</a></li>
+                                    <li><a href="javascript:void(0)">영업망 안내</a></li>
+                                    <li><a href="javascript:void(0)">구매 상담 신청</a></li>
+                                    <li><a href="javascript:void(0)">구매 가이드</a></li>
+                                    <li><a href="javascript:void(0)">렌터카정보</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)">체험센터</a>
+                            <div class="btm_tab2">
+                                <ul class="ex_center">
+                                    <li><a href="javascript:void(0)">시승 예약</a></li>
+                                    <li><a href="javascript:void(0)">전시차 조회</a></li>
+                                    <li><a href="javascript:void(0)">국내 사업장 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)">이벤트</a>
+                            <div class="btm_tab3">
+                                <ul class="event">
+                                    <li><a href="javascript:void(0)">진행중인 이벤트</a></li>
+                                    <li><a href="javascript:void(0)">종료된 이벤트</a></li>
+                                    <li><a href="javascript:void(0)">당첨자 발표</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <h1 class="logo"><a href="http://gh1343.dothome.co.kr/work/volkswagen">logo</a></h1>
+                    <ul class="gnb_right">
+                        <li><a href="javascript:void(0)">고객센터</a></li>
+                        <li><a href="javascript:void(0)">폭스멤버스</a></li>
+                        <li><a href="javascript:void(0)">기업문화홍보</a></li>
+                        <li><a href="javascript:void(0)">인재채용</a></li>
+                    </ul>
                 </div>
-              </div>
-            </li>
-            <li><a href="#none">구매정보</a>
-              <div class="btm_tab">
-                <ul class="car_purchase">
-                  <li><a href="#none">온라인견적</a></li>
-                  <li><a href="#none">상품 추천</a></li>
-                  <li><a href="#none">모델 비교</a></li>
-                  <li><a href="#none">카탈로그/가격표</a></li>
-                  <li><a href="#none">이달의 구매혜택</a></li>
-                  <li><a href="#none">영업망 안내</a></li>
-                  <li><a href="#none">구매 상담 신청</a></li>
-                  <li><a href="#none">구매 가이드</a></li>
-                  <li><a href="#none">렌터카정보</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="#none">체험센터</a>
-              <div class="btm_tab2">
-                <ul class="ex_center">
-                  <li><a href="#none">시승 예약</a></li>
-                  <li><a href="#none">전시차 조회</a></li>
-                  <li><a href="#none">국내 사업장 안내</a></li>
-                </ul>
-              </div>
-            </li>
-            <li><a href="#none">이벤트</a>
-              <div class="btm_tab3">
-                <ul class="event">
-                  <li><a href="#none">진행중인 이벤트</a></li>
-                  <li><a href="#none">종료된 이벤트</a></li>
-                  <li><a href="#none">당첨자 발표</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-          <h1 class="logo"><a href="http://gh1343.dothome.co.kr/work/volkswagen">logo</a></h1>
-          <ul class="gnb_right">
-            <li><a href="#none">고객센터</a></li>
-            <li><a href="#none">폭스멤버스</a></li>
-            <li><a href="#none">기업문화홍보</a></li>
-            <li><a href="#none">인재채용</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- vsl_wrap -->
-    <div class="vsl_wrap">
-      <div class="vsl_slideWrap">
-        <div class="vsl_slides">
-          <div>
-            <img src="img/main_img.jpg" alt="m_img1">
-          </div>
-          <div>
-            <img src="img/main_img2.png" alt="m_img2">
-          </div>
-          <div>
-            <img src="img/main_img3.png" alt="m_img3">
-          </div>
-        </div>
-      </div>
-      <div class="allow">
-        <a class="aw_left in" href="#none"></a>
-        <a class="aw_right" href="#none"></a>
-      </div>
-    </div>
-    <!-- ev_menu -->
-    <div class="ev_menu">
-      <div class="inner ev_menu_inner">
-        <ul class="ul_wrap">
-          <li>
-            <a href="#none"><img src="img/calculator-solid.svg" alt="size">온라인견적</a>
-          </li>
-          <li>
-            <a href="#none"><img src="img/car-solid.svg" alt="model">자동차 모델</a>
-          </li>
-          <li>
-            <a href="#none"><img src="img/coins-solid.svg" alt="promote">이달의 프로모션</a>
-          </li>
-          <li>
-            <a href="#none"><img src="img/steering-wheel.svg" alt="test">시승신청</a>
-          </li>
-          <li>
-            <a href="#none"><img src="img/sourcetree-brands.svg" alt="cos">드라이브코스</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- car_list -->
-    <section class="car_list">
-      <h2 class="best">best volkswagen</h2>
-      <div class="car_list_inner inner">
-        <div class="car_list_sliderWrap">
-          <div class="car_list_slides">
-            <div class="box">
-              <a href="#none">
-                <img src="img/center_img1.jpg" alt="car_1">
-                <p>
-                  SUV ㅣ 경유 ㅣ2000cc l 연비 14.9km/L(2등급)
-                  <br><span>save auto > 30/50만 할부 2.2%</span>
-                </p>
-              </a>
+            </nav>
+        </header>
+        <main>
+            <!-- vsl_wrap -->
+            <div class="vsl_wrap">
+                <div class="vsl_slideWrap">
+                    <div class="vsl_slides">
+                        <div>
+                            <img src="img/main_img.jpg" alt="메인 첫번째이미지" />
+                        </div>
+                        <div>
+                            <img src="img/main_img2.png" alt="메인 두번째이미지" />
+                        </div>
+                        <div>
+                            <img src="img/main_img3.png" alt="메인 세번째이미지" />
+                        </div>
+                    </div>
+                </div>
+                <div class="allow">
+                    <a class="aw_left in" href="javascript:void(0)"></a>
+                    <a class="aw_right" href="javascript:void(0)"></a>
+                </div>
             </div>
-            <div class="box">
-              <a href="#none">
-                <img src="img/center_img2.png" alt="골프2">
-                <p>
-                  SUV ㅣ 경유 ㅣ2000cc l 연비 14.5km/L(2등급)
-                  <br><span>save auto > 30/50만 할부 2.2%</span>
-                </p>
-              </a>
+            <!-- ev_menu -->
+            <div class="ev_menu">
+                <div class="inner ev_menu_inner">
+                    <ul class="ul_wrap">
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/calculator-solid.svg" alt="온라인견적 아이콘" /><span>온라인견적</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/car-solid.svg" alt="자동차 모델 아이콘" /><span>자동차 모델</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/coins-solid.svg" alt="포로모션 아이콘" /><span>이달의 프로모션</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/steering-wheel.svg" alt="시승신청 아이콘" /><span>시승신청</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img src="img/sourcetree-brands.svg" alt="드라이브코스 아이콘" /><span>드라이브코스</span></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="box">
-              <a href="#none">
-                <img src="img/center_img3.jpg" alt="골프3">
-                <p>
-                  SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
-                  <br><span>save auto > 30/50만 할부 2.2%</span>
-                </p>
-              </a>
-            </div>
-            <div class="box">
-              <a href="#none">
-                <img src="img/center_img4.png" alt="골프4">
-                <p>
-                  SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
-                  <br><span>save auto > 30/50만 할부 2.2%</span>
-                </p>
-              </a>
-            </div>
-            <div class="box">
-              <a href="#none">
-                <img src="img/center_img5.png" alt="골프5">
-                <p>
-                  SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
-                  <br><span>save auto > 30/50만 할부 2.2%</span>
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="car_list_button">
-          <a class="button_left take" href="#none"></a>
-          <a class="button_right" href="#none"></a>
-        </div>
-      </div>
-    </section>
-    <!-- sec1 -->
-    <section class="sec1">
-      <div class="sec1_inner inner">
-        <h2>EVENT VW</h2>
-        <div class="word1">
-          <div class="o_word1">
-            <a href="#none">
-              <p>
-                9월 이달의 구매혜택 이벤트
-              </p>
-              <p>
-                이벤트 기간 <span>2021.09.01~2021.09.30</span>
-              </p>
-            </a>
-          </div>
-          <div class="o_word1">
-            <a href="#none">
-              <p>
-                9월 이달의 구매혜택 이벤트
-              </p>
-              <p>
-                이벤트 기간 <span>2021.09.01~2021.09.30</span>
-              </p>
-            </a>
-          </div>
-          <!-- <div class="bgc1">
-          </div> -->
-        </div>
-        <div class="word2">
-          <h2>CHANNEL VOLKS</h2>
-          <div class="o_word2">
-            <a href="#none">
-              <p>
-                3박4일 시승이벤트
-              </p>
-              <p>
-                이벤트 기간 <span>2021.09.17~2021.10.30</span>
-              </p>
-            </a>
-          </div>
-          <div class="o_word2">
-            <a href="#none">
-              <p>
-                3박4일 시승이벤트
-              </p>
-              <p>
-                이벤트 기간 <span>2021.09.17~2021.10.30</span>
-              </p>
-            </a>
-          </div>
-          <!-- <div class="bgc2">
-          </div> -->
-        </div>
-      </div>
-    </section>
-    <!-- youtube_wrap -->
-    <section class="youtube_wrap">
-      <div class="inner youtube_wrap_inner">
-        <h3 class="brand_source">Source of inspiration : Opposites united I Volkswagen</h3>
-        <video controls src="img/media/The_new_Touareg..mp4"></video>
-        <div class="yt_text">
-          <p>Volkswagen I Movement that inspires</p>
-          <p>움직임은 우리 브랜드의 모든 행동에 영감을 주는<br>
-            근간입니다.브랜드와 디자인이 균형을 이룰 때<br>
-            미래를 향한우리의 발자취를 남길 수 있다고 믿습니다</p>
-        </div>
-        <div class="bgc3">
-        </div>
-      </div>
-    </section>
-    <!-- news -->
-    <section class="news">
-      <h3 class="inner brand_news">Volkswagen News</h3>
-      <div class="news_wrap inner">
-        <div class="news_list_sliderWrap">
-          <ul class="news_list_slides">
-            <li>
-              <a href="#none">
-                <img src="img/low_img1_fixed.png" alt="ns_img1">
-                <div>더보기</div>
-              </a>
-              <p>폭스바겐, 전기차 출시</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img2_fixed.png" alt="ns_img2">
-                <div>더보기</div>
-              </a>
-              <p>티구안 페이리스리프트 출시</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img3_fixed.png" alt="ns_img3">
-                <div>더보기</div>
-              </a>
-              <p>골프R 8세대 출시</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img4_fixed.png" alt="ns_img4">
-                <div>더보기</div>
-              </a>
-              <p>TCR대회 우승!</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img5_fixed.png" alt="ns_img1">
-                <div>더보기</div>
-              </a>
-              <p>아테온 풀체인지</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img6_fixed.png" alt="ns_img2">
-                <div>더보기</div>
-              </a>
-              <p>저탄소배출 1위</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img3_fixed.png" alt="ns_img3">
-                <div>더보기</div>
-              </a>
-              <p>골프R 8세대 출시</p>
-            </li>
-            <li>
-              <a href="#none">
-                <img src="img/low_img4_fixed.png" alt="ns_img4">
-                <div>더보기</div>
-              </a>
-              <p>TCR대회 우승!</p>
-            </li>
-          </ul>
-          <div class="btn">
-            <a class="btn_left active" href="#none"></a>
-            <a class="btn_right" href="#none"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- footer -->
-    <footer>
-      <div class="inner ft_inner">
-        <div class="ft_left">
-          <h2 class="ft_logo">
-            <img src="img/btm_logo2.png" alt="로고이미지">
-          </h2>
-          <p>모바일App I 저작권안내 I 개인정보 I 처리방침이용약관<br>
-            윤리경영 사이버 감사실 I 영상정보처리기기 운영관리방침 I 사이트맵<br>
-            고객센터 : 080-000-0000(승용), 080-000-0000(상용)<br>
+            <!-- car_list -->
+            <section class="car_list">
+                <h2 class="best">best volkswagen</h2>
+                <div class="car_list_inner inner">
+                    <div class="car_list_sliderWrap">
+                        <div class="car_list_slides">
+                            <div class="box">
+                                <a href="javascript:void(0)">
+                                    <img src="img/center_img1.jpg" alt="투아렉" />
+                                    <p>
+                                        SUV ㅣ 경유 ㅣ2000cc l 연비 14.9km/L(2등급)
+                                        <br><span>save auto > 30/50만 할부 2.2%</span>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="box">
+                                <a href="javascript:void(0)">
+                                    <img src="img/center_img2.png" alt="골프" />
+                                    <p>
+                                        SUV ㅣ 경유 ㅣ2000cc l 연비 14.5km/L(2등급)
+                                        <br><span>save auto > 30/50만 할부 2.2%</span>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="box">
+                                <a href="javascript:void(0)">
+                                    <img src="img/center_img3.jpg" alt="골프 웨건" />
+                                    <p>
+                                        SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
+                                        <br><span>save auto > 30/50만 할부 2.2%</span>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="box">
+                                <a href="javascript:void(0)">
+                                    <img src="img/center_img4.png" alt="제타" />
+                                    <p>
+                                        SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
+                                        <br><span>save auto > 30/50만 할부 2.2%</span>
+                                    </p>
+                                </a>
+                            </div>
+                            <div class="box">
+                                <a href="javascript:void(0)">
+                                    <img src="img/center_img5.png" alt="티구안" />
+                                    <p>
+                                        SUV ㅣ 경유 ㅣ 2000cc l 연비 15.2km/L(2등급)
+                                        <br><span>save auto > 30/50만 할부 2.2%</span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car_list_button">
+                        <a class="button_left take" href="javascript:void(0)"></a>
+                        <a class="button_right" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+            </section>
+            <!-- sec1 -->
+            <section class="sec1">
+                <div class="sec1_inner inner">
+                    <article class="aricle_wrap1">
+                        <div class="img_wrap">
+                            <div class="op_img1 first_opimg"></div>
+                            <div class="op_img2 first_opimg"></div>
+                        </div>
+                        <div class="word1">
+                            <div class="o_word1">
+                                <h2>EVENT VW</h2>
+                                <span>
+                                    9월 이달의 구매혜택 이벤트
+                                </span>
+                                <span>
+                                    이벤트 기간 <em>2024.09.01~2024.09.30</em>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="aricle_wrap2">
+                        <div class="img_wrap">
+                            <div class="op_img3 sec_opimg"></div>
+                            <div class="op_img4 sec_opimg"></div>
+                        </div>
+                        <div class="word2">
+                            <div class="o_word2">
+                                <h2>CHANNEL VOLKS</h2>
+                                <span>
+                                    3박4일 시승이벤트
+                                </span>
+                                <span>
+                                    이벤트 기간 <em>2024.09.17~2024.10.30</em>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- youtube_wrap -->
+            <section class="youtube_wrap">
+                <div class="inner youtube_wrap_inner">
+                    <h3 class="brand_source">Source of inspiration : Opposites united I Volkswagen</h3>
+                    <video controls src="img/media/The_new_Touareg..mp4"></video>
+                    <div class="yt_text">
+                    <p>Volkswagen I Movement that inspires</p>
+                    <p>
+                        움직임은 우리 브랜드의 모든 행동에 영감을 주는<br>
+                        근간입니다.브랜드와 디자인이 균형을 이룰 때<br>
+                        미래를 향한우리의 발자취를 남길 수 있다고 믿습니다
+                    </p>
+                    </div>
+                    <div class="bgc3">
+                    </div>
+                </div>
+            </section>
+            <!-- news -->
+            <section class="news">
+                <h3 class="inner brand_news">Volkswagen News</h3>
+                <div class="news_wrap inner">
+                    <div class="news_list_sliderWrap">
+                        <ul class="news_list_slides">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img1_fixed.png" alt="뉴스 이미지1" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>폭스바겐, 전기차 출시</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img2_fixed.png" alt="뉴스 이미지2" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>티구안 페이리스리프트 출시</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img3_fixed.png" alt="뉴스 이미지3" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>골프R 8세대 출시</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img4_fixed.png" alt="뉴스 이미지4" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>TCR대회 우승!</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img5_fixed.png" alt="뉴스 이미지5" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>아테온 풀체인지</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img6_fixed.png" alt="뉴스 이미지6" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>저탄소배출 1위</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img3_fixed.png" alt="뉴스 이미지7" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>골프R 8세대 출시</p>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <img src="img/low_img4_fixed.png" alt="뉴스 이미지8" />
+                                    <div>더보기</div>
+                                </a>
+                                <p>TCR대회 우승!</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn">
+                        <a class="btn_left active" href="javascript:void(0)"></a>
+                        <a class="btn_right" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- footer -->
+        <footer class="ft_wrap">
+            <div class="inner ft_inner">
+                <div class="ft_left">
+                    <h2 class="ft_logo">
+                        <img src="img/btm_logo2.png" alt="로고이미지" />
+                    </h2>
+                    <p>모바일App I 저작권안내 I 개인정보 I 처리방침이용약관<br>
+                    윤리경영 사이버 감사실 I 영상정보처리기기 운영관리방침 I 사이트맵<br>
+                    고객센터 : 080-000-0000(승용), 080-000-0000(상용)<br>
 
-            COPYRIGHT ⓒ VOLKSWAGAN COMPANY. ALL RIGHTS RESERVED.</p>
-        </div>
-        <div class="ft_right">
-          <h2 class="ft_friend">
-            <select>
-              <option value="family site">family site</option>
-              <option value="audi">audi</option>
-              <option value="porsche">porsche</option>
-            </select>
-          </h2>
-        </div>
-      </div>
-    </footer>
-  </div>
+                    COPYRIGHT ⓒ VOLKSWAGAN COMPANY. ALL RIGHTS RESERVED.</p>
+                </div>
+                <div class="ft_right">
+                    <h2 class="ft_friend">
+                        <select>
+                            <option value="family site">family site</option>
+                            <option value="audi">audi</option>
+                            <option value="porsche">porsche</option>
+                        </select>
+                    </h2>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
-
 </html>
