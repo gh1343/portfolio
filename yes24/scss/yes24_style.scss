@@ -77,9 +77,6 @@
             }
         }
     }
-    &.on {
-        display: flex;
-    }
     &.active .sub {
         opacity: 1;
 		visibility: visible;
@@ -127,9 +124,6 @@
 .sns {
     display: flex;
     margin-right: 70px;
-    &.on {
-        display: flex;
-    }
     @include desktop {
         margin-right: 0;
     }
@@ -1319,6 +1313,9 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
     z-index: 999;
+    &.on {
+        display: block;
+    }
 }
 .modal {
 	position: absolute;
@@ -1436,6 +1433,10 @@
     font-size: 14px;
     cursor: pointer;
     color: #777;
+    &.active {
+        background-color: #000;
+        color: #fff;
+    }
 }
 .link {
     display: flex;
@@ -1482,7 +1483,6 @@
 }
 /* gotop */
 .gotop {
-    display: none;
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
@@ -1494,7 +1494,11 @@
 	background-color: $black;
 	border: 1px solid $black;
 	color: #eee;
+    cursor: pointer;
     z-index: 9999;
+    @include desktop {
+        display: none;
+    }
 }
 /* mobile_navi */
 .mobile_popup {

@@ -1,115 +1,146 @@
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
     /**
      * gnb 이벤트 시작
      */
-    $('.gnb > li').mouseenter(function () {
-        $(this).parent().addClass('active');
-        $('.sub_bg').css({
-            'opacity':'0.9',
-            'visibility':'visible'
+    const gnbLiElements = document.querySelectorAll('.gnb > li');
+    const topHeadElement = document.querySelector('.top_head');
+    const subBgElement = document.querySelector('.sub_bg');
+    gnbLiElements.forEach(function(gnbLiElement) {
+        gnbLiElement.addEventListener('mouseenter', function() {
+            this.parentNode.classList.add('active');
+            subBgElement.classList.add('on');
         });
     });
-    $('header').mouseleave(function () {
-        $(this).find('.gnb').removeClass('active');
-        $('.gnb, .sub, .sns, .sub_bg').removeClass('on');
-        $('.sub_bg').css({
-            'opacity':'0',
-            'visibility':'hidden'
-        });
+    topHeadElement.addEventListener('mouseleave', function() {
+        this.querySelector('.gnb').classList.remove('active');
+        subBgElement.classList.remove('on');
     });
     /**
      * 모바일 햄버거 버튼 시작
      */
-    $('.mb_icon').click(function () {
-        $('.mobile_popup').addClass('on');
+    const mbIconElement = document.querySelector('.mb_icon');
+    const mobilePopupElement = document.querySelector('.mobile_popup');
+    const closeElement = document.querySelector('.close');
+    mbIconElement.addEventListener('click', function() {
+        mobilePopupElement.classList.add('on');
         document.body.style.overflow = 'hidden';
     });
-    $('.close').click(function(){
-        $('.mobile_popup').removeClass('on');
+    closeElement.addEventListener('click', function() {
+        mobilePopupElement.classList.remove('on');
         document.body.style.overflow = 'auto';
     });
-    $(window).scroll(function () {
-        let scroll = $(this).scrollTop();
-        let mainHeight = $('.main').height();
+    window.addEventListener('scroll', function() {
+        let scroll = window.pageYOffset || document.documentElement.scrollTop;
+        let mainHeight = document.querySelector('.main').offsetHeight;
+        let topHeadElement = document.querySelector('.top_head');
         if (scroll > mainHeight) {
-            $('header').css('background', 'rgba(0, 0, 0, 0.7)');
+            topHeadElement.style.background = 'rgba(0, 0, 0, 0.7)';
         } else {
-            $('header').css('background', 'none');
+            topHeadElement.style.background = 'none';
         }
     });
     /**
      * 로그인 버튼 시작
      */
-    $('.sns_conts:nth-child(2)').click(function () {
-        $('.modal_wrap').css('display', 'block');
+    const idParaElement = document.querySelector('.id_para');
+    const pwParaElement = document.querySelector('.pw_para');
+    const loginClassElement = document.querySelector('.login_class');
+    const snsContsSecond = document.querySelector('.sns_conts:nth-child(2)');
+    const modalWrap = document.querySelector('.modal_wrap');
+    const btnClose = document.querySelector('.btn_close');
+    let idInput, pwInput;
+    snsContsSecond.addEventListener('click', function() {
+        modalWrap.classList.add('on');
     });
-    $('.btn_close').click(function () {
-        $('.modal_wrap').css('display', 'none');
+    btnClose.addEventListener('click', function() {
+        modalWrap.classList.remove('on');
     });
-    // 공백이 아니고, 문자 또는 숫자가 하나씩 입력 되면 로그인 버튼 색변화
-    let idInput;
-    let pwInput;
-    $('.id_para, .pw_para').on('input', function() {
-        idInput = $('.id_para').val();
-        pwInput = $('.pw_para').val();
+    function handleInput() {
+        idInput = idParaElement.value;
+        pwInput = pwParaElement.value;
         let koreanRegex = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
         if (koreanRegex.test(idInput)) {
-            // 한글이 입력되면 값을 빈 문자열로 설정하여 한글 입력을 막음
-            $('.id_para').val('');
+            idParaElement.value = '';
         }
-        if(idInput !== '' && pwInput !== '') {
-            $('.login_class').css({
-                'background-color' : '#000',
-                'color' : '#fff'
-            });
+        if (idInput !== '' && pwInput !== '') {
+            loginClassElement.classList.add('active');
         } else {
-            $('.login_class').css({
-                'background-color' : '#e0e0e0',
-                'color' : '#777'
-            });
+            loginClassElement.classList.remove('active');
+        }
+    }
+    idParaElement.addEventListener('input', handleInput);
+    pwParaElement.addEventListener('input', handleInput);
+    loginClassElement.addEventListener('click', function() {
+        idInput = idParaElement.value;
+        pwInput = pwParaElement.value;
+        switch (true) {
+            case idInput === 'boysheep' && pwInput === '123':
+                alert('가입된 아이디 입니다.');
+                break;
+            case idInput === 'boysheep' && pwInput !== '123':
+                alert('비밀번호가 다릅니다.');
+                break;
+            case idInput !== 'boysheep':
+                alert('회원이 아닙니다.');
+                break;
+            default:
+                alert('회원이 아닙니다.');
         }
     });
-    $('.login_class').click(function(){
-        idInput = $('.id_para').val();
-        pwInput = $('.pw_para').val();
-        if (idInput == 'boysheep' && pwInput == '123') {
-            alert('가입된 아이디 입니다.');
-        } else if (idInput == 'boysheep' && pwInput != '123') {
-            alert('비밀번호가 다릅니다.');
-        } else if (idInput != 'boysheep') {
-            alert('회원이 아닙니다.');
-        } else { 
-            alert('회원이 아닙니다.');
-        }
+    /**
+     * gotop 버튼
+     */
+    const gotopElement = document.querySelector('.gotop');
+    gotopElement.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    // gotop
-    $('.gotop').click(function () {
-        $('html,body').animate({ 'scrollTop': 0 });
-    });
-    //movie tab
-    const mTxtLi = $('.m_txt > li');
-    mTxtLi.click(function (e) {
-        e.preventDefault();
-        let clickTab = $(this).find('a').attr('href');
-        $('.m_list, .arrow_wrap').css('display', 'none');
-        $(clickTab).css('display', 'flex');
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-    });
+    /**
+     * movie tab
+     */
+    // const mTxtLiElements = document.querySelectorAll('.m_txt > li');
+    // const mListElements = document.querySelectorAll('.m_list');
+    // const arrowWrapElement = document.querySelector('.arrow_wrap');
+    // mTxtLiElements.forEach(function(mTxtLiElement) {
+    //     mTxtLiElement.addEventListener('click', function(event) {
+    //         event.preventDefault();
+    //         let clickTab = this.querySelector('a').getAttribute('href');
+    //         mListElements.forEach(function(mListElement) {
+    //             mListElement.style.display = 'none';
+    //         });
+    //         arrowWrapElement.style.display = 'none';
+    //         document.querySelector(clickTab).style.display = 'flex';
+    //         mTxtLiElements.forEach(function(liElement) {
+    //             liElement.classList.remove('active');
+    //         });
+    //         this.classList.add('active');
+    //     });
+    // });
     /**
      * 영화 슬라이드 시작
      */
-    const movieSlidetab1 = new Swiper(".slides_wrap1", {
+    const slidesWrap1 = document.querySelector(".slides_wrap1");
+    const mbr1 = document.querySelector(".mbr1");
+    const mbl1 = document.querySelector(".mbl1");
+    const slidesWrap2 = document.querySelector(".slides_wrap2");
+    const mbr2 = document.querySelector(".mbr2");
+    const mbl2 = document.querySelector(".mbl2");
+    const slidesWrap3 = document.querySelector(".slides_wrap3");
+    const mbr3 = document.querySelector(".mbr3");
+    const mbl3 = document.querySelector(".mbl3");
+    const slidesWrap4 = document.querySelector(".slides_wrap4");
+    const mbr4 = document.querySelector(".mbr4");
+    const mbl4 = document.querySelector(".mbl4");
+    const movieSlidetab1 = new Swiper(slidesWrap1, {
         navigation: {
-            nextEl: ".mbr1",
-            prevEl: ".mbl1",
+            nextEl: mbr1,
+            prevEl: mbl1,
         },
-        slidesPerView : 5,
-        spaceBetween : 32,
+        slidesPerView: 5,
+        spaceBetween: 32,
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.mbl1').hide();
+                mbl1.style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
@@ -118,29 +149,33 @@ $(document).ready(function () {
                     // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
                         // 왼쪽 버튼 숨기기
-                        $('.mbl1').hide();
+                        mbl1.style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.mbl1').show();
+                        mbl1.style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.mbr1').hide();
+                        mbr1.style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.mbr1').show();
+                        mbr1.style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.mbl1, .mbr1').hide();
+                        mbl1.style.display = 'none';
+                        mbr1.style.display = 'none';
                     } else {
-                        $('.mbl1, .mbr1').hide();
+                        mbl1.style.display = 'none';
+                        mbr1.style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.mbr1, .mbl1').hide();
+                        mbr1.style.display = 'none';
+                        mbl1.style.display = 'none';
                     } else {
-                        $('.mbr1, .mbl1').hide();
+                        mbr1.style.display = 'none';
+                        mbl1.style.display = 'none';
                     }
                 }
             },
@@ -153,48 +188,52 @@ $(document).ready(function () {
             }
         }
     });
-    const movieSlidetab2 = new Swiper(".slides_wrap2", {
+    const movieSlidetab2 = new Swiper(slidesWrap2, {
         navigation: {
-            nextEl: ".mbr2",
-            prevEl: ".mbl2",
+            nextEl: mbr2,
+            prevEl: mbl2,
         },
-        slidesPerView : 5,
-        spaceBetween : 32,
+        slidesPerView: 5,
+        spaceBetween: 32,
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.mbl2').hide();
+                mbl2.style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
-                let currentIndex2 = this.realIndex;
+                let currentIndex1 = this.realIndex;
                 if (window.innerWidth > 1024) {
                     // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
                         // 왼쪽 버튼 숨기기
-                        $('.mbl2').hide();
+                        mbl2.style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.mbl2').show();
+                        mbl2.style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.mbr2').hide();
+                        mbr2.style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.mbr2').show();
+                        mbr2.style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.mbl2, .mbr2').hide();
+                        mbl2.style.display = 'none';
+                        mbr2.style.display = 'none';
                     } else {
-                        $('.mbl2, .mbr2').hide();
+                        mbl2.style.display = 'none';
+                        mbr2.style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.mbr2, .mbl2').hide();
+                        mbr2.style.display = 'none';
+                        mbl2.style.display = 'none';
                     } else {
-                        $('.mbr2, .mbl2').hide();
+                        mbr2.style.display = 'none';
+                        mbl2.style.display = 'none';
                     }
                 }
             },
@@ -207,48 +246,52 @@ $(document).ready(function () {
             }
         }
     });
-    const movieSlidetab3 = new Swiper(".slides_wrap3", {
+    const movieSlidetab3 = new Swiper(slidesWrap3, {
         navigation: {
-            nextEl: ".mbr3",
-            prevEl: ".mbl3",
+            nextEl: mbr3,
+            prevEl: mbl3,
         },
-        slidesPerView : 5,
-        spaceBetween : 32,
+        slidesPerView: 5,
+        spaceBetween: 32,
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.mbl3').hide();
+                mbl3.style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
-                let currentIndex3 = this.realIndex;
+                let currentIndex1 = this.realIndex;
                 if (window.innerWidth > 1024) {
                     // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
                         // 왼쪽 버튼 숨기기
-                        $('.mbl3').hide();
+                        mbl3.style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.mbl3').show();
+                        mbl3.style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.mbr3').hide();
+                        mbr3.style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.mbr3').show();
+                        mbr3.style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.mbl3, .mbr3').hide();
+                        mbl3.style.display = 'none';
+                        mbr3.style.display = 'none';
                     } else {
-                        $('.mbl3, .mbr3').hide();
+                        mbl3.style.display = 'none';
+                        mbr3.style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.mbr3, .mbl3').hide();
+                        mbr3.style.display = 'none';
+                        mbl3.style.display = 'none';
                     } else {
-                        $('.mbr3, .mbl3').hide();
+                        mbr3.style.display = 'none';
+                        mbl3.style.display = 'none';
                     }
                 }
             },
@@ -261,48 +304,52 @@ $(document).ready(function () {
             }
         }
     });
-    const movieSlidetab4 = new Swiper(".slides_wrap4", {
+    const movieSlidetab4 = new Swiper(slidesWrap4, {
         navigation: {
-            nextEl: ".mbr4",
-            prevEl: ".mbl4",
+            nextEl: mbr4,
+            prevEl: mbl4,
         },
-        slidesPerView : 5,
-        spaceBetween : 32,
+        slidesPerView: 5,
+        spaceBetween: 32,
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.mbl4').hide();
+                mbl4.style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
-                let currentIndex4 = this.realIndex;
+                let currentIndex1 = this.realIndex;
                 if (window.innerWidth > 1024) {
                     // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
                         // 왼쪽 버튼 숨기기
-                        $('.mbl4').hide();
+                        mbl4.style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.mbl4').show();
+                        mbl4.style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.mbr4').hide();
+                        mbr4.style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.mbr4').show();
+                        mbr4.style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.mbl4, .mbr4').hide();
+                        mbl4.style.display = 'none';
+                        mbr4.style.display = 'none';
                     } else {
-                        $('.mbl4, .mbr4').hide();
+                        mbl4.style.display = 'none';
+                        mbr4.style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.mbr4, .mbl4').hide();
+                        mbr4.style.display = 'none';
+                        mbl4.style.display = 'none';
                     } else {
-                        $('.mbr4, .mbl4').hide();
+                        mbr4.style.display = 'none';
+                        mbl4.style.display = 'none';
                     }
                 }
             },
@@ -316,44 +363,59 @@ $(document).ready(function () {
         }
     });
     //play
-    const icons = [$('.ic1'), $('.ic2'), $('.ic3')];
-    const views = [$('.vw1'), $('.vw2'), $('.vw3')];
-    const videos = $('.vod');
+    const icons = Array.from(document.querySelectorAll('.ic1, .ic2, .ic3'));
+    const views = Array.from(document.querySelectorAll('.vw1, .vw2, .vw3'));
+    const videos = Array.from(document.querySelectorAll('.vod'));
     icons.forEach((icon, index) => {
         const view = views[index];
-        const video = videos.get(index);
-        icon.click(() => {
-            view.css('display', 'block');
+        const video = videos[index];
+        icon.addEventListener('click', () => {
+            view.style.display = 'block';
         });
-        icon.on('click', () => {
+        icon.addEventListener('click', () => {
             video.currentTime = 0;
             video.play();
         });
     });
-    $('.vc1, .vc2, .vc3').click(function() {
-        const index = $(this).index('.vc1, .vc2, .vc3');
-        const view = views[index];
-        const video = videos.get(index);
-        view.css('display', 'none');
-        video.currentTime = 0;
-        video.pause();
+    document.querySelectorAll('.vc1, .vc2, .vc3').forEach(function(element) {
+        element.addEventListener('click', function() {
+            const index = Array.from(document.querySelectorAll('.vc1, .vc2, .vc3')).indexOf(element);
+            const view = views[index];
+            const video = videos[index];
+            view.style.display = 'none';
+            video.currentTime = 0;
+            video.pause();
+        });
     });
-    // play tab
-    const Ptab = $('.p_tab > li > a');
-    Ptab.click(function() {
-        Ptab.removeClass('on');
-        $(this).addClass('on');
-        const index = $(this).parent().index();
-        $('.p_img_wrap > div').hide().eq(index).show();
+    /**
+     * play tab
+     */
+    const pTabElements = document.querySelectorAll('.p_tab > li > a');
+    const pImgWrapElements = document.querySelectorAll('.p_img_wrap > div');
+    pTabElements.forEach(function(pTabElement) {
+        pTabElement.addEventListener('click', function(event) {
+            event.preventDefault();
+            pTabElements.forEach(function(tabElement) {
+                tabElement.classList.remove('on');
+            });
+            this.classList.add('on');
+            let index = Array.from(this.parentNode.parentNode.children).indexOf(this.parentNode);
+            pImgWrapElements.forEach(function(imgWrapElement) {
+                imgWrapElement.style.display = 'none';
+            });
+            pImgWrapElements[index].style.display = 'block';
+        });
     });
-    // magazine 슬라이드1
+    /**
+     * 매거진 슬라이드
+     */
     const personswiper1 = new Swiper(".maga1_sliderWrap", {
         navigation: {
             nextEl: ".si_right",
             prevEl: ".si_left",
         },
-        slidesPerView : 3,
-        spaceBetween : 20,
+        slidesPerView: 3,
+        spaceBetween: 20,
         breakpoints: {
             480: {
                 slidesPerView: 'auto',
@@ -363,37 +425,42 @@ $(document).ready(function () {
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.si_left').hide();
+                document.querySelector('.si_left').style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
                 let currentIndexmini1 = this.realIndex;
                 if (window.innerWidth > 480) {
+                    // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
-                    // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
-                        $('.si_left').hide();
+                        // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
+                        document.querySelector('.si_left').style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.si_left').show();
+                        document.querySelector('.si_left').style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.si_right').hide();
+                        document.querySelector('.si_right').style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.si_right').show();
+                        document.querySelector('.si_right').style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.si_left, .si_right').hide();
+                        document.querySelector('.si_left').style.display = 'none';
+                        document.querySelector('.si_right').style.display = 'none';
                     } else {
-                        $('.si_left, .si_right').hide();
+                        document.querySelector('.si_left').style.display = 'none';
+                        document.querySelector('.si_right').style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.si_right, .si_left').hide();
+                        document.querySelector('.si_right').style.display = 'none';
+                        document.querySelector('.si_left').style.display = 'none';
                     } else {
-                        $('.si_right, .si_left').hide();
+                        document.querySelector('.si_right').style.display = 'none';
+                        document.querySelector('.si_left').style.display = 'none';
                     }
                 }
             },
@@ -404,8 +471,8 @@ $(document).ready(function () {
             nextEl: ".si_right2",
             prevEl: ".si_left2",
         },
-        slidesPerView : 3,
-        spaceBetween : 20,
+        slidesPerView: 3,
+        spaceBetween: 20,
         breakpoints: {
             480: {
                 slidesPerView: 'auto',
@@ -415,43 +482,50 @@ $(document).ready(function () {
         on: {
             init: function () {
                 // 초기화될 때 왼쪽 버튼 숨기기
-                $('.si_left2').hide();
+                document.querySelector('.si_left2').style.display = 'none';
             },
             slideChange: function () {
                 // 현재 슬라이드 인덱스 가져오기
                 let currentIndexmini2 = this.realIndex;
                 if (window.innerWidth > 480) {
+                    // 첫 번째 슬라이드에 도달했을 때
                     if (this.isBeginning) {
-                    // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
-                        $('.si_left2').hide();
+                        // 첫 번째 슬라이드에 도달했을 때 왼쪽 버튼 숨기기
+                        document.querySelector('.si_left2').style.display = 'none';
                     } else {
                         // 첫 번째 슬라이드가 아닌 경우 왼쪽 버튼 보이기
-                        $('.si_left2').show();
+                        document.querySelector('.si_left2').style.display = 'block';
                     }
                     // 마지막 슬라이드에 도달했을 때
                     if (this.isEnd) {
                         // 오른쪽 버튼 숨기기
-                        $('.si_right2').hide();
+                        document.querySelector('.si_right2').style.display = 'none';
                     } else {
                         // 마지막 슬라이드가 아닌 경우 오른쪽 버튼 보이기
-                        $('.si_right2').show();
+                        document.querySelector('.si_right2').style.display = 'block';
                     }
                 } else {
                     if (this.isBeginning) {
-                        $('.si_left2, .si_right2').hide();
+                        document.querySelector('.si_left2').style.display = 'none';
+                        document.querySelector('.si_right2').style.display = 'none';
                     } else {
-                        $('.si_left2, .si_right2').hide();
+                        document.querySelector('.si_left2').style.display = 'none';
+                        document.querySelector('.si_right2').style.display = 'none';
                     }
                     if (this.isEnd) {
-                        $('.si_right2, .si_left2').hide();
+                        document.querySelector('.si_right2').style.display = 'none';
+                        document.querySelector('.si_left2').style.display = 'none';
                     } else {
-                        $('.si_right2, .si_left2').hide();
+                        document.querySelector('.si_right2').style.display = 'none';
+                        document.querySelector('.si_left2').style.display = 'none';
                     }
                 }
             },
         }
     });
-    // 모바일 네비 슬라이드
+    /**
+     * 이벤트 슬라이드
+     */
     const mobile_banner = new Swiper(".m_swiper", {
         pagination: {
             el: ".banner_navi",
@@ -478,32 +552,48 @@ $(document).ready(function () {
             }
         }
     });
-    // 이벤트 스탑
-    $('.rolling_list').on('mouseenter', function(){
+    const rollingList = document.querySelector('.rolling_wrap');
+    rollingList.addEventListener('mouseenter', function () {
         event.autoplay.stop();
     });
-    $('.rolling_list').on('mouseleave', function(){
+    rollingList.addEventListener('mouseleave', function () {
         event.autoplay.start();
+    });
+});
+$(document).ready(function(){
+    //movie tab
+    const mTxtLi = $('.m_txt > li');
+    mTxtLi.click(function (e) {
+        e.preventDefault();
+        let clickTab = $(this).find('a').attr('href');
+        $('.m_list, .arrow_wrap').css('display', 'none');
+        $(clickTab).css('display', 'flex');
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
     });
 });
 // 푸터 계열사 사이트 이동
 function goFamilySite() {
-    let famulySiteURL = $('#familysite').val();
+    let famulySiteURL = document.getElementById('familysite').value;  
     if (famulySiteURL != "") {
-        let win = window.open(famulySiteURL, 'winFamilySite')
+        let win = window.open(famulySiteURL, 'winFamilySite');
         win.focus();
     }
 }
 // 모바일 푸터 캐러셀
 function fnFooter() { 
-    var target = $('.btn_footerInfo').parent('dt');
-    if(!target.hasClass('active')){
-        target.siblings().slideDown(function(){
-            target.addClass('active');
+    const target = document.querySelector('.btn_footerInfo').parentNode;
+    if (!target.classList.contains('active')) {
+        const siblings = Array.from(target.parentNode.children).filter(child => child !== target);
+        siblings.forEach(sibling => {
+            sibling.style.display = 'block';
         });
-    }else{
-        target.siblings().slideUp(function(){
-            target.removeClass('active');
+        target.classList.add('active');
+    } else {
+        const siblings = Array.from(target.parentNode.children).filter(child => child !== target);
+        siblings.forEach(sibling => {
+            sibling.style.display = 'none';
         });
+        target.classList.remove('active');
     }
 }

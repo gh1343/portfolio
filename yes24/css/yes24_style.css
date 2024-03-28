@@ -91,9 +91,6 @@
 .gnb > li:hover > a::before, .gnb > li:focus > a::before {
   width: 100%;
 }
-.gnb.on {
-  display: flex;
-}
 .gnb.active .sub {
   opacity: 1;
   visibility: visible;
@@ -143,9 +140,6 @@
 .sns {
   display: flex;
   margin-right: 70px;
-}
-.sns.on {
-  display: flex;
 }
 @media (max-width: 1024px) {
   .sns {
@@ -1545,6 +1539,9 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
 }
+.modal_wrap.on {
+  display: block;
+}
 
 .modal {
   position: absolute;
@@ -1669,6 +1666,10 @@
   cursor: pointer;
   color: #777;
 }
+.login_class.active {
+  background-color: #000;
+  color: #fff;
+}
 
 .link {
   display: flex;
@@ -1717,7 +1718,6 @@
 
 /* gotop */
 .gotop {
-  display: none;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1729,7 +1729,13 @@
   background-color: #000;
   border: 1px solid #000;
   color: #eee;
+  cursor: pointer;
   z-index: 9999;
+}
+@media (max-width: 1024px) {
+  .gotop {
+    display: none;
+  }
 }
 
 /* mobile_navi */
