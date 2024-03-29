@@ -16,6 +16,8 @@
   align-items: center;
   width: 100%;
   height: 70px;
+  padding: 0 70px;
+  box-sizing: border-box;
 }
 @media (max-width: 1024px) {
   .top_head {
@@ -38,7 +40,6 @@
   background-size: contain;
   text-indent: -999px;
   overflow: hidden;
-  margin-left: 70px;
 }
 @media (max-width: 1024px) {
   .logo a {
@@ -139,7 +140,7 @@
 /* sns */
 .sns {
   display: flex;
-  margin-right: 70px;
+  gap: 20px;
 }
 @media (max-width: 1024px) {
   .sns {
@@ -151,7 +152,6 @@
   display: block;
   width: 20px;
   height: 20px;
-  margin-right: 20px;
   background-image: url("../images/sns_img1.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -350,7 +350,13 @@
 .m_txt {
   display: flex;
   margin-bottom: 20px;
+  gap: 32px;
   font-size: 26px;
+}
+@media (max-width: 480px) {
+  .m_txt {
+    gap: 20px;
+  }
 }
 .m_txt > li {
   position: relative;
@@ -360,14 +366,6 @@
 .m_txt > li.active {
   color: #000;
   font-weight: bold;
-}
-.m_txt > li:not(:first-child) {
-  margin-left: 32px;
-}
-@media (max-width: 480px) {
-  .m_txt > li:not(:first-child) {
-    margin-left: 20px;
-  }
 }
 .m_txt > li:not(:first-child)::before {
   content: "";
@@ -824,6 +822,7 @@
 .maga1_inner, .maga2_inner {
   width: 980px;
   display: flex;
+  gap: 50px;
   justify-content: space-between;
   padding: 0 30px;
 }
@@ -854,9 +853,6 @@
   }
 }
 
-.maga1_left {
-  margin-right: 50px;
-}
 @media (max-width: 860px) {
   .maga1_left {
     margin-right: 0;
@@ -877,9 +873,6 @@
   }
 }
 
-.maga2_right {
-  margin-left: 50px;
-}
 @media (max-width: 860px) {
   .maga2_right {
     margin-left: 0;
