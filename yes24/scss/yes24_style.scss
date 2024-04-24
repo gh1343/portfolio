@@ -727,7 +727,7 @@
         margin-right: 0;
         margin-bottom: 10px;
     }
-    > div {
+    > figure {
         width: 100%;
         @include tablet {
             width: 300px;
@@ -742,7 +742,7 @@
         margin-left: 0;
         margin-bottom: 10px;
     }
-    > div {
+    > figure {
         width: 100%;
         @include tablet {
             width: 300px;
@@ -862,12 +862,13 @@
         // font-size: 12px;
     }
 }
-.bottom p {
+.bottom figcaption {
 	font-size: 15px;
 	letter-spacing: -1px;
 	line-height: 1.2;
 	text-align: center;
     white-space: nowrap;
+    margin-top: 15px;
     @include desktop {
         font-size: 13px;
     }

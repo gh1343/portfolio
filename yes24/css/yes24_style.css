@@ -859,16 +859,16 @@
     margin-bottom: 10px;
   }
 }
-.maga1_left > div {
+.maga1_left > figure {
   width: 100%;
 }
 @media (max-width: 860px) {
-  .maga1_left > div {
+  .maga1_left > figure {
     width: 300px;
   }
 }
 @media (max-width: 480px) {
-  .maga1_left > div {
+  .maga1_left > figure {
     width: 210px;
   }
 }
@@ -879,16 +879,16 @@
     margin-bottom: 10px;
   }
 }
-.maga2_right > div {
+.maga2_right > figure {
   width: 100%;
 }
 @media (max-width: 860px) {
-  .maga2_right > div {
+  .maga2_right > figure {
     width: 300px;
   }
 }
 @media (max-width: 480px) {
-  .maga2_right > div {
+  .maga2_right > figure {
     width: 210px;
   }
 }
@@ -1021,20 +1021,21 @@
     font-size: 13px;
   }
 }
-.bottom p {
+.bottom figcaption {
   font-size: 15px;
   letter-spacing: -1px;
   line-height: 1.2;
   text-align: center;
   white-space: nowrap;
+  margin-top: 15px;
 }
 @media (max-width: 1024px) {
-  .bottom p {
+  .bottom figcaption {
     font-size: 13px;
   }
 }
 @media (max-width: 480px) {
-  .bottom p {
+  .bottom figcaption {
     font-size: 12px;
     letter-spacing: -1.5px;
   }
