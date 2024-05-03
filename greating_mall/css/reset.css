@@ -321,6 +321,6 @@ ul li, ol li {
   list-style: none;
 }
 
-p, h3 {
+p, h3, figure {
   margin: 0;
 }

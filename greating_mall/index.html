@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>그리팅몰</title>
-    <link rel="stylesheet" href="scss/swiper.min.css" />
-    <link rel="stylesheet" href="scss/style.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="script/lib/jquery3.6.0.js"></script>
     <script src="script/lib/swiper.min.js"></script>
     <script src="script/greating.js"></script>
@@ -299,9 +299,9 @@
                             <ul class="box">
                                 <li>
                                     <a href="javascript:void(0)">
-                                        <div class="img_wrap img_wrap_L">
+                                        <figure class="img_wrap img_wrap_L">
                                             <img src="img/section1_L1.jpg" alt="파트1 왼쪽 이미지" />
-                                        </div>
+                                        </figure>
                                         <div class="box_list_info">
                                             <div class="explain">
                                                 <span>베트남 현지 셰프가 직접 만든</span>
@@ -310,7 +310,7 @@
                                             <div class="price_wrap">
                                                 <span class="discount_per">15%</span>
                                                 <span class="none_price"><strong>7,225</strong>원</span>
-                                                <span class="discount_price">8,500원</span>
+                                                <del class="discount_price">8,500원</del>
                                             </div>
                                             <div class="box_list_btn">
                                                 <button type="button">
@@ -330,18 +330,18 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <a href="javascript:void(0)" class="slide_inner">
-                                            <div class="img_wrap">
-                                                <img src="img/section1_R1.jpg" alt="이미지1" />
-                                            </div>
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R1.jpg" alt=" 바투엣 매운 소고기 쌀국수" />
+                                            </figure>
                                             <div class="ex_wrap">
-                                                <div class="explain">
+                                                <div class="explain rt">
                                                     <span>베트남 현지 셰프가 직접 만든</span>
                                                     <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
                                                 </div>
                                                 <div class="price_wrap">
-                                                    <span class="discount_price">8,500원</span>
+                                                    <del class="discount_price db">8,500원</del>
                                                     <span class="discount_per">15%</span>
-                                                    <span class="none_price">7,225</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
                                                 </div>
                                             </div>
                                             <div class="box_list_btn">
@@ -356,18 +356,18 @@
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="javascript:void(0)" class="slide_inner">
-                                            <div class="flex_box">
-                                                <img src="img/section1_R1.jpg" alt="이미지1" />
-                                            </div>
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R2.jpg" alt="이미지1" />
+                                            </figure>
                                             <div class="ex_wrap">
-                                                <div class="explain">
+                                                <div class="explain rt">
                                                     <span>베트남 현지 셰프가 직접 만든</span>
                                                     <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
                                                 </div>
                                                 <div class="price_wrap">
+                                                    <del class="discount_price db">8,500원</del>
                                                     <span class="discount_per">15%</span>
-                                                    <span class="none_price">7,225</span>
-                                                    <span class="discount_price">8,500원</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
                                                 </div>
                                             </div>
                                             <div class="box_list_btn">
@@ -379,22 +379,21 @@
                                                 </button>
                                             </div>
                                         </a>
-                                        
                                     </div>
                                     <div class="swiper-slide">
                                         <a href="javascript:void(0)" class="slide_inner">
-                                            <div class="flex_box">
-                                                <img src="img/section1_R1.jpg" alt="이미지1" />
-                                            </div>
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R3.jpg" alt="이미지1" />
+                                            </figure>
                                             <div class="ex_wrap">
-                                                <div class="explain">
+                                                <div class="explain rt">
                                                     <span>베트남 현지 셰프가 직접 만든</span>
                                                     <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
                                                 </div>
                                                 <div class="price_wrap">
+                                                    <del class="discount_price db">8,500원</del>
                                                     <span class="discount_per">15%</span>
-                                                    <span class="none_price">7,225</span>
-                                                    <span class="discount_price">8,500원</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
                                                 </div>
                                             </div>
                                             <div class="box_list_btn">
@@ -406,12 +405,135 @@
                                                 </button>
                                             </div>
                                         </a>
-                                        
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0)" class="slide_inner">
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R4.jpg" alt="이미지1" />
+                                            </figure>
+                                            <div class="ex_wrap">
+                                                <div class="explain rt">
+                                                    <span>베트남 현지 셰프가 직접 만든</span>
+                                                    <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                                </div>
+                                                <div class="price_wrap">
+                                                    <del class="discount_price db">8,500원</del>
+                                                    <span class="discount_per">15%</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
+                                                </div>
+                                            </div>
+                                            <div class="box_list_btn">
+                                                <button type="button">
+                                                    <span class="add_cart">장바구니</span>
+                                                </button>
+                                                <button type="button">
+                                                    <span class="gift">선물</span>
+                                                </button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0)" class="slide_inner">
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R5.jpg" alt="이미지1" />
+                                            </figure>
+                                            <div class="ex_wrap">
+                                                <div class="explain rt">
+                                                    <span>베트남 현지 셰프가 직접 만든</span>
+                                                    <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                                </div>
+                                                <div class="price_wrap">
+                                                    <del class="discount_price db">8,500원</del>
+                                                    <span class="discount_per">15%</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
+                                                </div>
+                                            </div>
+                                            <div class="box_list_btn">
+                                                <button type="button">
+                                                    <span class="add_cart">장바구니</span>
+                                                </button>
+                                                <button type="button">
+                                                    <span class="gift">선물</span>
+                                                </button>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="javascript:void(0)" class="slide_inner">
+                                            <figure class="img_wrap">
+                                                <img src="img/section1_R6.jpg" alt="이미지1" />
+                                            </figure>
+                                            <div class="ex_wrap">
+                                                <div class="explain rt">
+                                                    <span>베트남 현지 셰프가 직접 만든</span>
+                                                    <span>[모두의맛집] 바투엣 매운 소고기 쌀국수</span>
+                                                </div>
+                                                <div class="price_wrap">
+                                                    <del class="discount_price db">8,500원</del>
+                                                    <span class="discount_per">15%</span>
+                                                    <span class="none_price"><strong>7,225</strong>원</span>
+                                                </div>
+                                            </div>
+                                            <div class="box_list_btn">
+                                                <button type="button">
+                                                    <span class="add_cart">장바구니</span>
+                                                </button>
+                                                <button type="button">
+                                                    <span class="gift">선물</span>
+                                                </button>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination item_list_nav1"></div>
                             </div>
                         </div>
                     </article>
+                </div>
+            </section>
+            <section class="mid_banner">
+                <div class="inner">
+                    <div class="swiper-container mid_banner_slide_wrap">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner1.jpg" alt="암환자식단 체험팩" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner2.jpg" alt="신장질환식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner3.jpg" alt="건강식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner4.jpg" alt="맞춤형 건강식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner5.jpg" alt="챌린지식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner6.jpg" alt="당뇨식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner7.jpg" alt="암환자식단" />
+                            </li>
+                            <li class="swiper-slide">
+                                <img src="img/mid_banner8.jpg" alt="고혈압식단" />
+                            </li>
+                        </ul>
+                        <div class="swiper-pagination mid_banner_nav"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="part2">
+                <div class="inner">
+                    <span class="topic">얼마나 쉽게요?!</span>
+                    <h3 class="recommand">
+                        <a href="javascript:void(0)">
+                            <strong>전자레인지로 식사 완성</strong>
+                            <i class="ico_cook"><img src="img/cook_icon.png" alt="요리캐릭터" /></i>
+                            <i class="ico_arrow"></i>
+                        </a>
+                    </h3>
                 </div>
             </section>
         </main>
