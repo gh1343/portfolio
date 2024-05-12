@@ -1,16 +1,15 @@
 $(document).ready(function(){
     // 해당 위치에 오면 페이드인
-    window.addEventListener('scroll', function() {
-        // Part1 요소의 위치
-        const part1Position = document.querySelector('.part2').getBoundingClientRect().top;
-        // 화면의 높이
-        const windowHeight = window.innerHeight;
-    
-        // Part1 요소가 화면에 보일 때
-        if (part1Position < windowHeight) {
-            // recommand 요소에 fadein 클래스 추가
-            document.querySelector('.recommand').classList.add('fadein');
-        }
+    $(window).scroll(function() {
+        $('.topic').each(function(i) {
+            let bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if (bottom_of_window > bottom_of_object) {
+                $(this).addClass('fadein');
+                $(this).siblings().addClass('fadein');
+            }
+        });
     });
     //헤더 스크롤 고정
     if($('.mainHeadMenuArea').length){
