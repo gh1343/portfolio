@@ -24,6 +24,28 @@ $(document).ready(function(){
             };
         });
     };
+    // 상품 할인가격 계산
+    $('.price_wrap > .origin_price').each(function() {
+        // 원래 가격 텍스트를 가져와 숫자로 변환
+        let originalText = $(this).text(); // 예: "8,500원"
+        let originalPrice = parseInt(originalText.replace(/[^0-9]/g, ''), 10); // 숫자가 아닌 모든 문자를 제거하고 숫자로 변환
+
+        // 부모 요소를 가져옴
+        let priceWrap = $(this).parent();
+
+        // 할인율 텍스트를 가져와 숫자로 변환
+        let discountText = priceWrap.children('.discount_per').text(); // 예: "10" (퍼센트)
+        let discountPercent = parseFloat(discountText); // 문자열을 부동 소수점 숫자로 변환
+
+        // 할인된 가격 계산
+        let discountedPrice = originalPrice * (1 - discountPercent / 100);
+
+        // 할인된 가격을 천 단위로 포맷팅
+        let discountedPriceFormatted = discountedPrice.toLocaleString();
+
+        // 할인된 가격을 .discounted_price 요소에 설정
+        priceWrap.find('.dis_txt').text(discountedPriceFormatted);
+    });
     // 카테고리 이벤트
     $('.catagory > button').click(function() {
         $('.catagory').toggleClass('active');
@@ -49,10 +71,10 @@ $(document).ready(function(){
 
     const right_slide = new Swiper(".item_list", {
         loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: false,
+        // },
         direction: "vertical",
         // centeredSlides: true,
         slidesPerView : 3,
@@ -63,12 +85,12 @@ $(document).ready(function(){
             clickable: true,
         },
     });
-    $('.item_list').on('mouseenter', function(){
-        right_slide.autoplay.stop();
-    });
-    $('.item_list').on('mouseleave', function(){
-        right_slide.autoplay.start();
-    });
+    // $('.item_list').on('mouseenter', function(){
+    //     right_slide.autoplay.stop();
+    // });
+    // $('.item_list').on('mouseleave', function(){
+    //     right_slide.autoplay.start();
+    // });
 
     const mid_banner_slide_wrap = new Swiper(".mid_banner_slide_wrap", {
         pagination: {

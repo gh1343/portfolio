@@ -543,12 +543,14 @@ document.addEventListener('DOMContentLoaded', function() {
             disableOnInteraction: false,
         },
         slidesPerView: 'auto',
-        freeMode: true,
+        //freeMode: true,
         spaceBetween: 20,
         breakpoints: {
             768: {
                 autoplay: false,
-                loop: false
+            },
+            486: {
+                autoplay: false,
             }
         }
     });
